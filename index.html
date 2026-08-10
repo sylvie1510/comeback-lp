@@ -15,6 +15,7 @@
   --paper:#FFFFFF; --gold:#F8AD93; --clay:#924F23; --coral:#F58A7B;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100%}
 body{
   font-family:'Polin',system-ui,sans-serif;font-weight:300;
   direction:rtl;text-align:center;color:var(--ink);background:#F3EBE0;
@@ -31,7 +32,8 @@ section{padding:110px 24px}
   text-transform:uppercase;margin-bottom:20px}
 h1{font-weight:900;font-size:96px;line-height:.95;letter-spacing:-.03em}
 h2{font-weight:900;font-size:42px;line-height:1.15;letter-spacing:-.01em}
-.sub{font-size:28px;font-weight:900;line-height:1.35;margin-top:24px}
+.sub{font-size:28px;font-weight:900;line-height:1.4;margin-top:24px}
+.wink{font-weight:300;font-size:20px;color:var(--clay);white-space:nowrap}
 p{font-size:20px;color:var(--ink-soft);margin-top:22px}
 p.big{font-size:24px;color:var(--ink)}
 .hl{font-size:25px;font-weight:900;color:var(--clay);margin-top:34px;display:block;line-height:1.35}
@@ -95,6 +97,37 @@ h1.big{color:var(--clay)}
 .avoid li:not(:last-child)::before{content:'';position:absolute;left:-16px;
   width:7px;height:7px;border-radius:50%;background:var(--coral)}
 @media(max-width:820px){.esc div{font-size:16px;padding:15px 20px}.avoid li{font-size:18px}}
+
+/* נתוני אמינות */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
+.stat{background:#fff;border-radius:10px;padding:34px 20px;box-shadow:0 4px 18px rgba(81,44,21,.07);
+  border-top:4px solid var(--coral)}
+.stat b{display:block;font-size:48px;line-height:1;color:var(--clay)}
+.stat span{display:block;font-size:17px;margin-top:10px;color:var(--ink)}
+
+/* עדויות */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1060px;
+  margin:46px auto 0;align-items:start}
+.tcard{background:#fff;border-radius:12px;padding:12px;
+  box-shadow:0 6px 24px rgba(81,44,21,.10);border:1px solid rgba(248,173,147,.5)}
+.tcard img{width:100%;border-radius:7px;display:block}
+@media(max-width:820px){.tgrid{grid-template-columns:1fr;max-width:420px}}
+
+/* סרגל דביק במובייל */
+#sticky{display:none}
+@media(max-width:820px){
+  .stats,.quotes{grid-template-columns:1fr}
+  .stat b{font-size:40px}
+  body{padding-bottom:78px}
+  #sticky{display:flex;position:fixed;bottom:0;right:0;left:0;z-index:98;
+    background:#fff;border-top:1px solid rgba(248,173,147,.9);
+    padding:11px 14px;gap:12px;align-items:center;justify-content:space-between;
+    box-shadow:0 -4px 20px rgba(81,44,21,.12)}
+  #sticky .p{font-size:15px;font-weight:900;color:var(--ink);white-space:nowrap;flex:0 0 auto}
+  #sticky a{flex:1 1 auto;margin:0;padding:14px 8px;font-size:15px;border-radius:6px;
+    background:var(--clay);color:#fff;font-weight:900;text-decoration:none;
+    max-width:none;width:auto;text-align:center}
+}
 
 /* qualifier cards */
 .ifs{margin-top:44px}
@@ -184,7 +217,13 @@ footer{background:#F3EBE0;color:var(--ink);padding:44px 24px;font-size:15px;
 .todo b{color:var(--clay)}
 
 @media(max-width:820px){
-  section,.thesis{padding:64px 20px}
+  .wink{font-size:16px;white-space:normal;display:block;margin-top:6px}
+  .btn{font-size:16px;padding:16px 20px;width:100%;max-width:340px}
+  .chips{gap:8px}
+  .chip{font-size:12px;padding:7px 13px}
+  .meta{font-size:14px}
+  .under{font-size:13px}
+  section,.thesis{padding:64px 18px}
   h1{font-size:56px} h2{font-size:28px} .sub{font-size:21px}
   p{font-size:17px} p.big{font-size:19px} .hl{font-size:20px}
   .if{font-size:17px} li{font-size:18px}
@@ -200,14 +239,14 @@ footer{background:#F3EBE0;color:var(--ink);padding:44px 24px;font-size:15px;
   <div class="w t">
     <img class="avatar" src="hero.jpg" alt="סילבי פרידמן">
     <h1 class="big">הקאמבק</h1>
-    <div class="sub">ההרצאה שתלמד אתכם איך לחזור אחד אל השנייה אחרי ריב.</div>
+    <div class="sub">מריב שנמשך ימים<br>לשיחת שלום באותו הערב <span class="wink">(גג מחרתיים :))</span></div>
     <div class="chips">
       <span class="chip">מוקלט, שלכם לשבועיים</span>
       <span class="chip">לבד או ביחד</span>
       <span class="chip">מחויבות בפעולה</span>
     </div>
     <div class="meta">גישה מיידית · צופים מתי שנוח · שלכם לשבועיים</div>
-    <a class="btn" href="#buy">מוכנים לקאמבק · 179 ₪</a>
+    <a class="btn" href="#buy">גישה מיידית להרצאה (179 ₪)</a>
     <div class="under">תשלום מאובטח · הגישה נפתחת מיד אחרי הרכישה</div>
   </div>
 </section>
@@ -362,7 +401,7 @@ footer{background:#F3EBE0;color:var(--ink);padding:44px 24px;font-size:15px;
     <div class="logi">
       <div class="lg"><h4>גישה מיידית</h4><p>רוכשים, ומקבלים קישור לצפייה מיד. בלי לחכות לתאריך.</p></div>
       <div class="lg"><h4>לבד או ביחד</h4><p>אפשר לצפות שניכם יחד, ואפשר כל אחד בזמן שלו. שתי הדרכים עובדות.</p></div>
-      <div class="lg"><h4>שלכם לשבועיים</h4><p>אפשר לעצור, לחזור, ולצפות שוב. שבועיים מלאים.</p></div>
+      <div class="lg"><h4>שלכם לשבועיים</h4><p>ההרצאה מתוכננת כך שתוכלו לצפות בה כבר הערב וליישם מיד. השבועיים הם כדי שתוכלו לחזור אליה, לא כדי ללחוץ עליכם.</p></div>
     </div>
     <span class="hl">אף אחד לא רואה אתכם.<br>אתם צופים מהבית, בזמן שלכם.</span>
   </div>
@@ -375,14 +414,35 @@ footer{background:#F3EBE0;color:var(--ink);padding:44px 24px;font-size:15px;
   </div>
 </section>
 
-<div class="auth">מעל 1,000 נשים וזוגות · 8 שנות ליווי · 450 זוגות עברו את אתגר ריצ׳ארג׳</div>
+<!-- 9 AUTHORITY -->
+<section>
+  <div class="w t"><div class="kick">קצת רקע</div><h2>מי מלמדת אתכם</h2></div>
+  <div class="stats">
+    <div class="stat"><b>1,000+</b><span>נשים וזוגות שליוויתי</span></div>
+    <div class="stat"><b>8</b><span>שנות ליווי זוגי</span></div>
+    <div class="stat"><b>450</b><span>זוגות עברו את אתגר ריצ׳ארג׳</span></div>
+  </div>
+</section>
+
+<!-- 9b TESTIMONIALS -->
+<section class="alt">
+  <div class="w t">
+    <div class="kick">מזוגות ונשים שעברו איתי תהליך</div>
+    <h2>מה הן כתבו לי</h2>
+  </div>
+  <div class="tgrid">
+    <div class="tcard"><img src="testimonials/t1.jpg" alt="עדות"></div>
+    <div class="tcard"><img src="testimonials/t2.jpg" alt="עדות"></div>
+    <div class="tcard"><img src="testimonials/t3.jpg" alt="עדות"></div>
+  </div>
+</section>
 
 <!-- 9 FAQ -->
 <section>
   <div class="w t">
     <h2>שאלות נפוצות</h2>
     <div style="margin-top:36px">
-      <details open><summary>אני רוצה לצפות בלי בן הזוג. זה בסדר?</summary><p>לגמרי. אפשר לצפות לבד, ואפשר ביחד. הכלים שתקבלי עובדים גם כשרק צד אחד מתחיל להשתמש בהם, כי הם משנים את מה שקורה בשיחה, לא את מי שיושב מולך.</p></details>
+      <details open><summary>אני רוצה לצפות בלי בן הזוג. זה בסדר?</summary><p>לגמרי. אפשר לצפות לבד, ואפשר ביחד. הכלים שתקבלי עובדים גם כשרק צד אחד מתחיל להשתמש בהם, כי הם משנים את מה שקורה בשיחה, לא את מי שיושב מולך.</p><p style="font-weight:900;color:var(--clay)">כשצד אחד משנה את חוקי המשחק, הדינמיקה כולה משתנה.</p></details>
       <details><summary>מישהו יראה אותנו? זה מביך לי.</summary><p>אף אחד. זו הרצאה מוקלטת שאתם צופים בה מהבית. אין שיחת זום, אין משתתפים אחרים ואף אחד לא יודע שרכשתם.</p></details>
       <details><summary>מתי אפשר לצפות?</summary><p>מתי שנוח לכם. הגישה נפתחת מיד אחרי הרכישה ונשארת פתוחה שבועיים. אפשר לעצור באמצע ולחזור.</p></details>
       <details><summary>אצלנו זה לא כזה נורא.</summary><p>מצוין. ההרצאה הזאת הכי עוזרת דווקא לפני שזה נהיה נורא, כשעוד קל להחזיר.</p></details>
@@ -395,16 +455,17 @@ footer{background:#F3EBE0;color:var(--ink);padding:44px 24px;font-size:15px;
 <!-- 10 BUY -->
 <section id="buy">
   <div class="w t">
-    <h2>מריב שנמשך ימים,<br>לשיחה שנגמרת באותו ערב.</h2>
-    <p class="big">כשאתם יודעים לעצור, לחזור ולתקן, ריב מפסיק להיות איום על הזוגיות. הוא הופך לעוד משהו שאתם יודעים לעבור ביחד.</p>
+    <h2>ריב מפסיק להיות<br>איום על הזוגיות.</h2>
+    <p class="big">כשאתם יודעים לעצור, לחזור ולתקן, הוא הופך לעוד משהו שאתם יודעים לעבור ביחד.</p>
     <p>וזה משנה לא רק את הריב הבא. זה משנה את מה שקורה בבית בין הריבים.</p>
     <div class="buybox">
       <div class="n">179 ₪</div>
       <div class="l">מוקלט · גישה מיידית · שלכם לשבועיים</div>
-      <a class="btn" href="https://www.selfish-mom.com/product-page/%D7%94%D7%A7%D7%90%D7%9E%D7%91%D7%A7" id="buybtn">מוכנים לקאמבק</a>
+      <a class="btn" href="https://www.selfish-mom.com/product-page/%D7%94%D7%A7%D7%90%D7%9E%D7%91%D7%A7" id="buybtn">גישה מיידית להרצאה (179 ₪)</a>
     </div>
     <p style="font-size:15px;margin-top:24px">🔒 תשלום מאובטח. הפרטים שלך שמורים.</p>
   </div>
 </section>
 
 <footer>סילבי פרידמן · מאמנת זוגות · שיטת ה־50% · @sylvie_selfishlove</footer>
+<div id="sticky"><span class="p">179 ₪</span><a href="#buy">גישה מיידית להרצאה</a></div>
