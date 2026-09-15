@@ -170,7 +170,10 @@ details p + p{margin-top:12px;padding-bottom:26px}
 #stick a:hover{background:var(--ink);border-color:var(--ink)}
 
 footer{background:var(--ink);color:var(--mute);text-align:center;padding:36px var(--gut) 96px;
-  font-size:13px;font-weight:900;letter-spacing:.14em}
+  font-size:13px;font-weight:900;letter-spacing:.14em;display:flex;flex-direction:column;gap:14px}
+footer .flinks{letter-spacing:.04em}
+footer a{color:var(--mute);text-decoration:none;border-bottom:1px solid rgba(156,141,129,.45)}
+footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 
 /* ---------- motion ---------- */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -730,7 +733,10 @@ footer{background:var(--ink);color:var(--mute);text-align:center;padding:36px va
   </div>
 </section>
 
-<footer>סילבי פרידמן · מאמנת זוגות · @sylvie_selfishlove</footer>
+<footer>
+  <div>סילבי פרידמן · מאמנת זוגות · @sylvie_selfishlove</div>
+  <div class="flinks"><a href="terms.html">תקנון ותנאי שימוש</a> · <a href="privacy.html">מדיניות פרטיות</a></div>
+</footer>
 
 <div id="stick">
   <span class="t">הקאמבק · מחיר השקה<small>נסגר בעוד <i id="sk-t" style="font-style:normal;font-family:ui-monospace,Menlo,monospace">--:--:--</i></small></span>
