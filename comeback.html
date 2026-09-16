@@ -271,10 +271,9 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 .peeknotes{display:grid;gap:clamp(16px,2.2vw,26px);max-width:900px;
   margin:clamp(30px,3.6vw,46px) auto 0;text-align:right}
 @media(min-width:720px){.peeknotes{grid-template-columns:repeat(3,1fr)}}
-.peeknotes div{font-size:clamp(14.5px,1.1vw,16px);color:var(--body);line-height:1.6;
-  border-top:1px solid var(--hair);padding-top:13px}
-.peeknotes b{display:block;font-weight:900;color:var(--crim);
-  font-size:clamp(16.5px,1.3vw,19px);line-height:1.3;margin-bottom:6px}
+.peeknotes div{font-size:clamp(14.5px,1.1vw,16px);color:var(--body);line-height:1.6}
+.peeknotes span{display:block;border-top:1px solid var(--hair);padding-top:12px;margin-top:10px}
+.peeknotes b{display:block;font-weight:900;color:var(--crim);font-size:clamp(16.5px,1.3vw,19px);line-height:1.3}
 
 /* ---------- anchor / deadline note ---------- */
 .anchor{margin-top:16px;font-size:16px;color:var(--body);max-width:44ch;margin-inline:auto;line-height:1.5}
@@ -458,7 +457,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
         <span class="en">STOP</span>
         <h3>לעצור לפני הנקודה שאין ממנה חזרה</h3>
         <p class="line">אתם מאבדים שליטה על הריב. וגם כשמישהו מנסה לעצור, עצם ההפסקה מציתה ריב בפני עצמו.</p>
-        <p class="trans">תדעו לעצור ביחד, בלי שאף אחד ירגיש מושתק או נטוש. ובלי להתנצל אחר כך על מה שנאמר בלהט.</p>
+        <p class="trans">תדעו לעצור ביחד, בלי שאף אחד ירגיש מושתק או נטוש.</p>
       </div>
       <div class="st rv">
         <span class="n">2</span>
@@ -472,14 +471,14 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
         <span class="en">RETURN</span>
         <h3>מי עושה את הצעד הראשון</h3>
         <p class="line">אחד מפחד ליזום כדי לא לחטוף שוב דחייה כואבת. והשני מרגיש שהוא תמיד זה שמפייס, וזה כבד.</p>
-        <p class="trans">תהיה לכם דרך מוסכמת לפתוח את הדלת, והזמנות לחיבור ששניכם יודעים לשלוח ולזהות. בלי שאף אחד יישאר עם התפקיד לבד.</p>
+        <p class="trans">תהיה לכם דרך מוסכמת לפתוח את הדלת להזמנות לחיבור ששניכם יודעים לשלוח ולזהות. בלי שאף אחד יישאר עם התפקיד לבד.</p>
       </div>
       <div class="st rv">
         <span class="n">4</span>
         <span class="en">REPAIR</span>
         <h3>לדבר על מה שקרה בלי לפתוח את זה מחדש</h3>
         <p class="line">כבר ויתרתם על לדבר על זה, כי כל ניסיון נגמר בריב מתיש נוסף. אז מטאטאים מתחת לשטיח, וממשיכים.</p>
-        <p class="trans">שלוש הדקות הראשונות הן שיעשו את ההבדל. תצאו עם הבנה של מה כל אחד מכם באמת הרגיש וצריך, ולא עם עוד סיבוב.</p>
+        <p class="trans">מסגרת שמייצרת מרחב בטוח לשיחה לא פשוטה.</p>
       </div>
       <div class="st rv">
         <span class="n">5</span>
@@ -521,6 +520,11 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 
       <button type="button" aria-expanded="false" data-a="a4">״כל שיחה על מה שקרה נגמרת בריב חדש.״<i>+</i></button>
       <div class="ans" id="a4"><b>תחנה 04 · REPAIR</b><p>שם מקבלים מבנה שיחה שמחזיק שני סיפורים שונים בלי להפוך אותם לכתב אישום, ומגיעים לאחריות הדדית.</p></div>
+      <button type="button" aria-expanded="false" data-a="a5">״דיברנו וסגרנו, ובכל זאת נשארנו רחוקים.״<i>+</i></button>
+      <div class="ans" id="a5">
+        <b>תחנה 05 · RECONNECT</b>
+        <p>שם לומדים שהגוף של הקשר לא חוזר מעצמו, ומסכימים על הסימן שאומר לשניכם שחזרתם באמת.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -541,9 +545,9 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     </div>
 
     <div class="peeknotes rv">
-      <div><b>״בוא נעצור״ נשמע כמו נטישה</b>שניכם עונים על אותו מסך, ורואים בזמן אמת מה השני סימן.</div>
-      <div><b>ההזמנה שלא נספרה</b>כל תחנה נפתחת במסר קולי ממני, ואחריו תרגיל קצר.</div>
-      <div><b>שתי חוויות, אותו ריב</b>ובסוף נבנית לכם מפה, שמדפיסים ותולים על המקרר.</div>
+      <div><b>״בוא נעצור״ נשמע כמו נטישה</b><span>שניכם עונים על אותו מסך, ורואים בזמן אמת מה השני סימן.</span></div>
+      <div><b>ההזמנה שלא נספרה</b><span>כל תחנה נפתחת במסר קולי ממני, ואחריו תרגיל קצר.</span></div>
+      <div><b>שתי חוויות, אותו ריב</b><span>ובסוף נבנית לכם מפה, שמדפיסים ותולים על המקרר.</span></div>
     </div>
 
     <p class="hand rv" style="margin-top:clamp(22px,2.6vw,32px)">
