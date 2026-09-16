@@ -56,17 +56,16 @@ h3{font-size:clamp(23px,2.6vw,33px);line-height:1.12;letter-spacing:-.025em}
 p{max-width:var(--measure);margin-inline:auto}
 b,strong{font-weight:900;color:var(--ink)}
 .dark b,.dark strong{color:var(--ink)}
-.hand{color:var(--crim);font-size:clamp(19px,2.1vw,26px);line-height:1.35;font-weight:900;
-  letter-spacing:-.02em;max-width:30ch;margin-inline:auto}
+.hand{color:var(--ink);font-size:clamp(17px,1.65vw,21px);line-height:1.5;font-weight:300;letter-spacing:0;max-width:36ch;margin-inline:auto}
 .tag{font-size:12.5px;font-weight:900;letter-spacing:.22em;color:var(--mute);display:block}
 .tag.c{color:var(--crim)}
 
 /* ---------- section head: number in the gutter ---------- */
 .head{max-width:1000px;margin-inline:auto}
-.head h2{max-width:15ch;margin-inline:auto}
+.head h2{max-width:16ch;margin-inline:auto}
 .head .tag{margin-bottom:16px}
 .head .hand{margin-inline:auto}
-.rulez{margin-inline:auto;max-width:64px;height:2px;background:var(--crim)}
+.rulez{margin:clamp(18px,2vw,26px) auto 0;max-width:52px;height:2px;background:var(--crim-soft);opacity:.75}
 .rulez{margin-block:clamp(28px,3.6vw,46px)}
 
 
@@ -109,10 +108,13 @@ b,strong{font-weight:900;color:var(--ink)}
 /* ---------- editorial lists (no cards) ---------- */
 .rows{margin-top:clamp(26px,3.4vw,44px);border-top:1px solid var(--hair);max-width:960px;margin-inline:auto}
 .dark .rows{border-color:var(--hair)}
-.rows li{list-style:none;border-bottom:1px solid var(--hair);padding:clamp(19px,2.3vw,27px) 0}
+.rows li{list-style:none;border-bottom:1px solid var(--hair);padding:clamp(21px,2.5vw,30px) 0}
 .dark .rows li{border-color:var(--hair)}
-.rows li .m{display:none}
-.rows li .x{display:block;font-size:clamp(18px,1.7vw,23px);font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1.32;max-width:46ch;margin-inline:auto}
+.rows li{display:grid;grid-template-columns:auto 1fr;gap:0 14px;align-items:baseline;text-align:right}
+.rows li .m{display:block;font-size:11.5px;font-weight:900;letter-spacing:.14em;color:var(--crim-soft);opacity:.65;padding-top:.35em}
+.rows li .x{margin-inline:0!important}
+.rows li > div{text-align:right}
+.rows li .x{display:block;font-size:clamp(16.5px,1.28vw,19.5px);font-weight:300;color:var(--body);letter-spacing:0;line-height:1.68;max-width:50ch;margin-inline:auto}
 .dark .rows li .x{color:var(--ink)}
 .rows li p{margin-top:8px;font-size:16.5px;max-width:52ch;margin-inline:auto}
 .rows.two{border-top:0}
@@ -132,11 +134,10 @@ b,strong{font-weight:900;color:var(--ink)}
 .st .en{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:13.5px;
   letter-spacing:.2em;color:var(--crim);padding-top:11px;display:block}
 .st h3{margin-top:6px;text-align:right}
-.st .line{margin-top:13px;font-size:clamp(16px,1.25vw,18.5px);line-height:1.6;max-width:none;text-align:right}
+.st .line{margin-top:13px;font-size:clamp(16px,1.25vw,18.5px);line-height:1.68;color:var(--body);max-width:none;text-align:right}
 .st li{position:relative;padding-inline-start:20px;font-size:clamp(16px,1.25vw,18px);line-height:1.55;max-width:none}
 .st li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;background:var(--crim-soft)}
-.st .trans{margin-top:16px;font-size:clamp(16.5px,1.3vw,19px);font-weight:900;
-  color:var(--crim);line-height:1.45;max-width:none;text-align:right}
+.st .trans{margin-top:18px;font-size:clamp(15.5px,1.2vw,18px);font-weight:400;color:var(--ink);line-height:1.62;max-width:none;text-align:right;background:var(--white);border:1px solid var(--hair);border-radius:12px;border-inline-start:3px solid var(--crim-soft);padding:14px 18px}
 .st .out{margin-top:18px;padding-top:14px;border-top:1px solid var(--hair);
   display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;justify-content:flex-start;max-width:none;margin-inline:0}
 .out .l{font-size:11.5px;font-weight:900;letter-spacing:.2em;color:var(--crim)}
@@ -159,8 +160,7 @@ b,strong{font-weight:900;color:var(--ink)}
 /* ---------- pull quote ---------- */
 .pull{margin-block:clamp(40px,5vw,72px);padding-top:clamp(24px,3vw,38px);position:relative}
 .pull::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:52px;height:2px;background:var(--crim)}
-.pull p{font-size:clamp(21px,2.5vw,34px);font-weight:900;color:var(--ink);line-height:1.2;
-  letter-spacing:-.028em;max-width:26ch;margin-inline:auto}
+.pull p{font-size:clamp(20px,2.2vw,30px);font-weight:900;color:var(--ink);line-height:1.28;letter-spacing:-.022em;max-width:28ch;margin-inline:auto}
 .dark .pull p{color:var(--ink)}
 
 /* ---------- price ---------- */
@@ -214,8 +214,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
   padding:clamp(52px,8vw,120px) var(--gut)}
 .band-say p{font-size:clamp(27px,4.4vw,58px);font-weight:900;line-height:1.1;
   letter-spacing:-.035em;max-width:18ch;margin-inline:auto;color:#FBF8F5}
-.band-say small{display:block;margin-top:18px;font-size:clamp(15px,1.5vw,18px);
-  font-weight:900;letter-spacing:.04em;color:#F0D9D6}
+.band-say small{display:block;margin-top:16px;font-size:clamp(15px,1.4vw,17.5px);font-weight:300;letter-spacing:.02em;color:#F2DEDA;opacity:.92}
 
 /* ---------- self check ---------- */
 .quiz{max-width:720px;margin:clamp(26px,3.4vw,44px) auto 0}
