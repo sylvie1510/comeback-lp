@@ -50,6 +50,7 @@ h2{font-weight:900;font-size:clamp(20px,5.4vw,26px);line-height:1.2;color:var(--
   margin-top:clamp(20px,4vw,26px)}
 .foot{text-align:center;font-size:13px;color:#9b8b83;margin-top:20px}
 .foot a{color:var(--crim);text-decoration:none;font-weight:900}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9}
 </style>
 </head>
 <body>
@@ -94,12 +95,53 @@ h2{font-weight:900;font-size:clamp(20px,5.4vw,26px);line-height:1.2;color:var(--
 
     <p class="ritual">שבו ביחד, תמזגו לכם כוס יין, תדליקו איזה נר, ותתחילו את הדרך חזרה.</p>
 
-    <p class="sig">לכו תייצרו לכם זוגיות מדהימה!<br>סילבי</p>
+    <p class="sig">לכו תייצרו לכם זוגיות מדהימה ומאושרת!<br>סילבי</p>
 
   </div>
 </div>
 
 <p class="foot">סילבי פרידמן · מאמנת זוגות · <a href="https://www.instagram.com/sylvie_selfishlove/" target="_blank" rel="noopener">@sylvie_selfishlove</a></p>
 
+<canvas id="confetti" aria-hidden="true"></canvas>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('confetti'), x = c.getContext('2d');
+  var W, H, parts = [], start = Date.now(), DUR = 2600;
+  var COLORS = ['#840200','#b6564e','#e7c6bc','#c99a5b','#7a5e50'];
+  function size(){ W = c.width = innerWidth; H = c.height = innerHeight; }
+  size(); addEventListener('resize', size);
+  for(var i=0;i<90;i++){
+    parts.push({
+      x: Math.random()*W,
+      y: -20 - Math.random()*H*0.6,
+      w: 5 + Math.random()*6,
+      h: 8 + Math.random()*10,
+      vy: 1.6 + Math.random()*2.4,
+      vx: -0.7 + Math.random()*1.4,
+      a: Math.random()*Math.PI,
+      va: -0.06 + Math.random()*0.12,
+      col: COLORS[(Math.random()*COLORS.length)|0]
+    });
+  }
+  function frame(){
+    var t = Date.now() - start;
+    if(t > DUR + 1800){ c.remove(); return; }
+    var fade = t > DUR ? Math.max(0, 1 - (t-DUR)/1800) : 1;
+    x.clearRect(0,0,W,H);
+    x.globalAlpha = fade;
+    for(var i=0;i<parts.length;i++){
+      var p = parts[i];
+      p.y += p.vy; p.x += p.vx; p.a += p.va;
+      if(p.y > H + 30){ p.y = -20; p.x = Math.random()*W; }
+      x.save(); x.translate(p.x, p.y); x.rotate(p.a);
+      x.fillStyle = p.col; x.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      x.restore();
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
