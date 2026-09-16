@@ -322,7 +322,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 </style>
 
 <div class="cd">
-  <span>ההזדמנות להצטרף לקאמבק במחיר השקה נסגרת בעוד</span>
+  <span id="cdlbl">ההזדמנות להצטרף לקאמבק במחיר השקה נסגרת בעוד</span>
   <span class="clock" id="clock" aria-label="זמן שנותר">
     <span class="u"><b id="cd-d">00</b><i>ימים</i></span>
     <span class="u"><b id="cd-h">00</b><i>שעות</i></span>
@@ -684,11 +684,11 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <p><b>תבחרו יום קבוע בשבוע שבו כל אחד מכם שולח לשני שובר הפתעה אחד, ויש לכם שבוע לממש אותו.</b></p>
     </div>
     <div class="price rv">
-      <span class="l">מחיר השקה · רכישה אחת לשני בני הזוג</span>
-      <div class="n">297 ₪</div>
+      <span class="l" id="pricelbl">מחיר השקה · רכישה אחת לשני בני הזוג</span>
+      <div class="n"><span class="pr">297</span> ₪</div>
       <span class="l">חמש תחנות · מפת קאמבק מלאה · ללא הגבלת זמן</span>
-      <p class="anchor">מפגש אחד בקליניקה שלי עולה 750 ₪. <b>התהליך המלא, לשניכם, ב־297 ₪ — ונשאר אצלכם לתמיד.</b></p>
-      <span class="deadline">מחיר ההשקה נסגר עם סיום הספירה למעלה</span>
+      <p class="anchor">מפגש אחד בקליניקה שלי עולה 750 ₪. <b>התהליך המלא, לשניכם, ב־<span class="pr">297</span> ₪ — ונשאר אצלכם לתמיד.</b></p>
+      <span class="deadline" id="dlnote">מחיר ההשקה נסגר עם סיום הספירה למעלה</span>
       <a class="btn" href="https://www.selfish-mom.com/product-page/%D7%94%D7%A7%D7%90%D7%9E%D7%91%D7%A7">מצטרפים עכשיו ויוצאים ממעגל השתיקה</a>
       <span class="l" style="letter-spacing:.06em">✓ רכישה מאובטחת ✓ גישה מיידית לשניכם</span>
     </div>
@@ -753,7 +753,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     </div>
     <div class="rv">
       <a class="btn" href="#buy">להיות זוג שיודע לחזור</a>
-      <p class="specs" style="margin-top:20px">חמש התחנות לעצירת ההסלמה, שיחת תיקון ובניית שותפות יציבה · 297 ₪ לזוג</p>
+      <p class="specs" style="margin-top:20px">חמש התחנות לעצירת ההסלמה, שיחת תיקון ובניית שותפות יציבה · <span class="pr">297</span> ₪ לזוג</p>
     </div>
   </div>
 </section>
@@ -764,8 +764,8 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 </footer>
 
 <div id="stick">
-  <span class="t">הקאמבק · מחיר השקה<small>נסגר בעוד <i id="sk-t" style="font-style:normal;font-family:ui-monospace,Menlo,monospace">--:--:--</i></small></span>
-  <a href="#buy">להתחיל ב־297 ₪ ←</a>
+  <span class="t">הקאמבק · <span class="pr">297</span> ₪<small id="sklbl">נסגר בעוד <i id="sk-t" style="font-style:normal;font-family:ui-monospace,Menlo,monospace">--:--:--</i></small></span>
+  <a href="#buy">להתחיל ב־<span class="pr">297</span> ₪ ←</a>
 </div>
 
 <script>
@@ -790,14 +790,34 @@ document.querySelectorAll('.quiz button').forEach(function(b){
 });
 </script>
 <script>
-// תאריך סיום מחיר ההשקה — לעדכן כאן
-var DEADLINE = new Date('2026-09-24T23:59:59+03:00').getTime();
+// תאריכים ומחירים — לעדכן כאן
+var PRICE_UP = new Date('2026-09-19T23:59:59+03:00').getTime();  // אחריו המחיר עולה
+var DEADLINE = new Date('2026-09-24T23:59:59+03:00').getTime();  // אחריו ההרשמה נסגרת
+var PRICE_EARLY = '247', PRICE_FULL = '297';
 (function(){
   var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
       m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
   function pad(n){return (n<10?'0':'')+n;}
   function tick(){
-    var t=DEADLINE-Date.now(); if(t<0){t=0;}
+    var now = Date.now(), early = now < PRICE_UP;
+    var target = early ? PRICE_UP : DEADLINE;
+    var price  = early ? PRICE_EARLY : PRICE_FULL;
+    document.querySelectorAll('.pr').forEach(function(el){ el.textContent = price; });
+    var cl = document.getElementById('cdlbl');
+    if(cl) cl.textContent = early
+      ? 'מחיר ההשקה עולה ל־' + PRICE_FULL + ' ₪ בעוד'
+      : 'ההרשמה לקאמבק נסגרת בעוד';
+    var pl = document.getElementById('pricelbl');
+    if(pl) pl.textContent = early
+      ? 'מחיר השקה לשלושה ימים · רכישה אחת לשני בני הזוג'
+      : 'רכישה אחת לשני בני הזוג';
+    var dn = document.getElementById('dlnote');
+    if(dn) dn.textContent = early
+      ? 'אחרי הספירה למעלה המחיר עולה ל־' + PRICE_FULL + ' ₪, וההרשמה נסגרת אחרי שמונה ימים'
+      : 'עם סיום הספירה למעלה ההרשמה נסגרת';
+    var sl = document.getElementById('sklbl');
+    if(sl) sl.textContent = (early ? 'המחיר עולה בעוד ' : 'נסגר בעוד ');
+    var t=target-now; if(t<0){t=0;}
     var sec=Math.floor(t/1000);
     var sk=document.getElementById('sk-t');
     if(sk){sk.textContent=Math.floor(sec/86400)+' ימים '+pad(Math.floor(sec%86400/3600))+':'+pad(Math.floor(sec%3600/60))+':'+pad(sec%60);}
