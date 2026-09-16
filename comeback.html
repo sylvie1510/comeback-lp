@@ -248,12 +248,16 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 .trust span{display:block;font-size:12.5px;font-weight:900;letter-spacing:.06em;color:var(--mute);margin-top:7px}
 
 /* ---------- product preview ---------- */
-.peek{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(14px,1.8vw,22px);
-  margin-top:clamp(26px,3.4vw,44px)}
-.peek figure{margin:0}
-.peek img{width:100%;display:block;border:1px solid var(--hair);background:var(--white);
-  border-radius:8px;box-shadow:0 12px 30px -20px rgba(42,33,28,.6)}
-.peek figcaption{font-size:14px;font-weight:900;color:var(--body);margin-top:11px;line-height:1.4}
+.peek{display:grid;gap:clamp(22px,3vw,34px);max-width:820px;margin-inline:auto}
+.peek figure{margin:0;display:grid;gap:clamp(14px,2.2vw,26px);align-items:center}
+@media(min-width:680px){
+  .peek figure{grid-template-columns:260px 1fr}
+  .peek figure:nth-child(even){grid-template-columns:1fr 260px}
+  .peek figure:nth-child(even) img{order:2}
+}
+.peek img{width:100%;display:block;border:1px solid var(--hair);background:var(--white);border-radius:10px}
+.peek figcaption{font-size:clamp(15.5px,1.2vw,17.5px);color:var(--body);line-height:1.6;text-align:right}
+.peek figcaption b{display:block;font-weight:900;color:var(--crim);font-size:clamp(17px,1.35vw,20px);margin-bottom:7px}
 
 /* ---------- anchor / deadline note ---------- */
 .anchor{margin-top:16px;font-size:16px;color:var(--sand);max-width:44ch;margin-inline:auto;line-height:1.5}
@@ -427,31 +431,6 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
   </div>
 </section>
 
-<!-- ========== WHAT IT IS ========== -->
-
-<section class="band-say">
-  <p class="rv">להתנהג כאילו לא קרה כלום אחרי כמה ימים זה לא תיקון.</p>
-  <small class="rv">זה רק דוחה את הריב הבא</small>
-</section>
-
-<section class="sheet">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="htxt">
-        <span class="tag c">מה זה בעצם</span>
-        <h2>לא קורס שמאזינים לו.<br>תהליך שעוברים אותו.</h2>
-      </div>
-    </div>
-    <div class="rulez"></div>
-    <ul class="rows two rv">
-            <li><span class="m">01</span><div><span class="x">עשרים דקות, מהספה</span><p>לא צריך לפנות ערב שלם. תחנה אחת בכל פעם, מהטלפון, ואפשר לעצור באמצע ולחזור בדיוק לאותו מקום.</p></div></li>
-      <li><span class="m">02</span><div><span class="x">שניכם, על אותו מסך</span><p>כל אחד עונה בטור שלו ורואה בזמן אמת מה השני ענה. זה מה שמייצר את השיחה, לא השאלה. ואם הוא עדיין לא שם, אפשר לעבור את זה לבד ולהביא אליו את מה שגיבשתם.</p></div></li>
-      <li><span class="m">03</span><div><span class="x">לא יוצאים עם תובנות. יוצאים עם הסכם</span><p>בסוף כל תחנה נבנית לכם מפה: מילת הקוד שעוצרת ריב, מי מחזיר לשיחה, ומה כל אחד מכם עושה בפעם הבאה.</p></div></li>
-      <li><span class="m">04</span><div><span class="x">ותולים על המקרר</span><p>את המפה מדפיסים, את הכרטיסים שומרים בטלפון, והגישה נשארת פתוחה לתמיד.</p></div></li>
-    </ul>
-  </div>
-</section>
-
 <!-- ========== STATIONS ========== -->
 <section>
   <div class="wrap">
@@ -540,16 +519,41 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="head rv">
       <div class="htxt">
         <span class="tag c">הצצה פנימה</span>
-        <h2>ככה זה נראה מבפנים</h2>
-        <p class="hand" style="margin-top:16px">לא סרטון שמסתכלים עליו. מסך שעונים בו, שניכם</p>
+        <h2>לא קורס שמאזינים לו.<br>תהליך שעוברים אותו.</h2>
       </div>
     </div>
     <div class="rulez"></div>
-    <div class="peek rv">
-      <figure><img src="preview/p1.jpg" alt="מסך פתיחה של תחנה"><figcaption>כל תחנה נפתחת במסר קולי קצר ממני, ואחריו הסבר: מה קורה לכם ברגע הזה, ולמה.</figcaption></figure>
-      <figure><img src="preview/p2.jpg" alt="תרגיל זוגי על המסך"><figcaption>ואז תרגיל: כל אחד בוחר ומנסח בטור שלו, ורואים את התשובות זו לצד זו.</figcaption></figure>
-      <figure><img src="preview/p3.jpg" alt="תרגיל נוסף בתהליך"><figcaption>בסוף התחנה נוצרת המפה שלכם, ואיתה כרטיסים שאפשר לשמור בטלפון או להדפיס ולתלות.</figcaption></figure>
+
+    <div class="peek">
+      <figure class="rv">
+        <img src="preview/p1.jpg" alt="מסך פתיחה של תחנה">
+        <figcaption>
+          <b>עשרים דקות, מהספה</b>
+          כל תחנה נפתחת במסר קולי קצר ממני, ואחריו הסבר: מה קורה לכם ברגע הזה, ולמה.
+          אפשר לעצור באמצע ולחזור בדיוק לאותו מקום.
+        </figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="preview/p2.jpg" alt="תרגיל זוגי על המסך">
+        <figcaption>
+          <b>שניכם, על אותו מסך</b>
+          כל אחד עונה בטור שלו ורואה בזמן אמת מה השני ענה.
+          זה מה שמייצר את השיחה, לא השאלה.
+        </figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="preview/p3.jpg" alt="המפה והכרטיסים בסוף התחנה">
+        <figcaption>
+          <b>לא יוצאים עם תובנות. יוצאים עם הסכם</b>
+          בסוף כל תחנה נבנית לכם מפה: מילת הקוד שעוצרת ריב, מי מחזיר לשיחה,
+          ומה כל אחד מכם עושה בפעם הבאה. מדפיסים, ותולים על המקרר.
+        </figcaption>
+      </figure>
     </div>
+
+    <p class="hand rv" style="margin-top:clamp(26px,3.2vw,40px)">
+      ואם בן או בת הזוג עדיין לא שם, אפשר לעבור את זה לבד ולהביא אליהם את מה שגיבשתם
+    </p>
   </div>
 </section>
 
