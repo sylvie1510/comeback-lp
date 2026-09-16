@@ -251,6 +251,11 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 /* ---------- product preview ---------- */
 .inside{background:var(--paper,#F3EAE3);padding-block:clamp(48px,6vw,84px);overflow:hidden}
 .inside .hand{text-align:center}
+.peeknotes{display:grid;gap:clamp(12px,1.6vw,18px);max-width:860px;
+  margin:clamp(26px,3.2vw,40px) auto 0;text-align:center}
+@media(min-width:720px){.peeknotes{grid-template-columns:repeat(3,1fr)}}
+.peeknotes div{font-size:clamp(14.5px,1.1vw,16px);color:var(--body);line-height:1.62;
+  border-top:1px solid var(--hair);padding-top:14px}
 .pace{max-width:46ch;margin:clamp(26px,3.2vw,38px) auto 0;padding:clamp(16px,2.2vw,22px) clamp(18px,2.6vw,26px);
   background:var(--white);border:1px solid var(--hair);border-radius:14px;
   border-inline-start:3px solid var(--crim-soft);text-align:right;
@@ -544,10 +549,16 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <div class="phone p-c"><img src="preview/p3.jpg" alt="תחנה 04 · שתי גרסאות לאותו ריב"></div>
       <div class="phone p-b"><img src="preview/p1.jpg" alt="תחנה 01 · מה כל אחד שומע כשמבקשים הפסקה"></div>
     </div>
+    <div class="peeknotes rv">
+      <div>שניכם עונים על אותו מסך, ורואים בזמן אמת מה השני סימן.</div>
+      <div>כל תחנה נפתחת במסר קולי ממני, ואחריו תרגיל קצר.</div>
+      <div>ובסוף נבנית לכם מפה, שמדפיסים ותולים על המקרר.</div>
+    </div>
+
     <div class="pace rv">
       <b>ההמלצה שלי: תחנה אחת ביום, חמישה ימים.</b>
       יותר מתחנה אחת ביום זה יותר מדי מידע לעבד, ומרווחים גדולים מדי מרחיקים אתכם מהמטרה.
-      ואם קשה לכם לחכות למחר, זה מובן לגמרי. כל זוג בקצב שלו.
+      ואם יש לכם קושי עם דחיית סיפוקים, זה מובן :) כל אחד והקצב שנכון לו.
     </div>
 
     <p class="hand rv" style="margin-top:clamp(22px,2.6vw,32px)">
@@ -727,7 +738,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
         <p><b>בנוסף, חלק מהעבודה כולל זיהוי של הדפוסים האישיים שלכם, וברגע שצד אחד משנה את אופן התגובה שלו בזמן הסלמה, כל הדינמיקה בבית משתפרת.</b></p>
       </details>
       <details><summary>אנחנו לא בעיצומו של ריב כרגע. האם זה עדיין רלוונטי?</summary><p>זה הזמן הטוב ביותר. כשאנחנו מוצפים רגשית, קשה מאוד לקלוט מידע חדש או לייצר הסכמות. כשבונים את מפת הקאמבק בזמן של שקט ורוגע, יש לכם נוהל עבודה מוסכם וברור שרק צריך לשלוף ברגע המאתגר הבא.</p></details>
-      <details><summary>באיזה קצב הכי נכון לעבור את התחנות?</summary><p>ההמלצה שלי היא תחנה אחת ביום, חמישה ימים ברצף. זוגות שעברו את זה מספרים שיותר מתחנה ביום זה יותר מדי מידע לעבד, ושמרווחים גדולים מדי בין תחנה לתחנה מרחיקים מהמטרה.</p><p>ואם קשה לכם לחכות ובא לכם להמשיך, זה לגמרי מובן. אין פה שעון, והגישה נשארת אצלכם. כל זוג בקצב שלו.</p></details>
+      <details><summary>באיזה קצב הכי נכון לעבור את התחנות?</summary><p>ההמלצה שלי היא תחנה אחת ביום, חמישה ימים ברצף. זוגות שעברו את זה מספרים שיותר מתחנה ביום זה יותר מדי מידע לעבד, ושמרווחים גדולים מדי בין תחנה לתחנה מרחיקים מהמטרה.</p><p>ואם יש לכם קושי עם דחיית סיפוקים, זה מובן :) אין פה שעון, והגישה נשארת אצלכם. כל אחד והקצב שנכון לו.</p></details>
       <details><summary>אין לנו זמן לעוד תהליך.</summary><p>בדיוק בשביל זה הוא בנוי ככה. תחנה אחת היא כ־20 דקות, כמו חצי פרק בסדרה. ואם תשוו את זה לסוף שבוע שלם של שתיקה ומתח בבית, זו העסקה הכי משתלמת שתעשו השנה.</p><p class="em">ובינינו, כדי לחיות בזוגיות מאושרת וקרובה צריך להשקיע בה משאבים, כמו זמן ואנרגיה. אין פה קיצורי דרך.</p></details>
       <details><summary>האם הקאמבק מחליף טיפול זוגי?</summary><p>לא. הקאמבק הוא כלי למידה ועבודה זוגית עצמאית ומעשית. הוא אינו מיועד למצבי משבר קיצוניים, ואינו מתאים למערכות יחסים שיש בהן אלימות, פחד או פגיעה בביטחון האישי. במצבים כאלה יש לפנות לקבלת ליווי מקצועי מוסמך.</p></details>
     </div>
