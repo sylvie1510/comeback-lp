@@ -248,26 +248,34 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 .trust span{display:block;font-size:12.5px;font-weight:900;letter-spacing:.06em;color:var(--mute);margin-top:7px}
 
 /* ---------- product preview ---------- */
-.inside{background:#231B17;color:#EDE2DA;padding-block:clamp(52px,7vw,96px)}
+.inside{background:#231B17;color:#EDE2DA;padding-block:clamp(48px,6vw,84px);overflow:hidden}
 .inside .tag{color:#E0A79F}
 .inside h2{color:#FFF9F5}
 .inside .hand{color:#C9B6AB;text-align:center}
-.peek{display:grid;gap:clamp(34px,4.4vw,58px);max-width:900px;margin:clamp(34px,4.4vw,56px) auto 0}
-.peek figure{margin:0;display:grid;gap:clamp(18px,2.6vw,34px);align-items:center}
-@media(min-width:720px){
-  .peek figure{grid-template-columns:300px 1fr}
-  .peek figure:nth-child(even){grid-template-columns:1fr 300px}
-  .peek figure:nth-child(even) .phone{order:2}
+
+.fan{position:relative;height:clamp(268px,40vw,360px);max-width:680px;
+  margin:clamp(30px,4vw,48px) auto 0}
+.fan .phone{position:absolute;top:0;left:50%;width:clamp(148px,21vw,206px);
+  padding:9px 7px;background:linear-gradient(160deg,#3d3029,#171110);border-radius:26px;
+  box-shadow:0 28px 55px -20px rgba(0,0,0,.8), inset 0 0 0 1px rgba(255,240,230,.14)}
+.fan .phone::before{content:"";position:absolute;top:4px;left:50%;transform:translateX(-50%);
+  width:44px;height:4px;border-radius:99px;background:rgba(255,240,230,.24)}
+.fan img{width:100%;display:block;border-radius:18px}
+.fan .p-a{transform:translateX(-50%) translate(-118px,26px) rotate(-8deg);z-index:1}
+.fan .p-c{transform:translateX(-50%) translate(118px,26px) rotate(8deg);z-index:2}
+.fan .p-b{transform:translateX(-50%) translateY(-8px);z-index:3}
+@media(max-width:560px){
+  .fan .p-a{transform:translateX(-50%) translate(-74px,22px) rotate(-9deg) scale(.9)}
+  .fan .p-c{transform:translateX(-50%) translate(74px,22px) rotate(9deg) scale(.9)}
 }
-.phone{position:relative;max-width:300px;margin-inline:auto;padding:12px 10px;
-  background:linear-gradient(160deg,#3a2e28,#191310);border-radius:30px;
-  box-shadow:0 26px 60px -22px rgba(0,0,0,.75), inset 0 0 0 1px rgba(255,240,230,.12)}
-.phone::before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);
-  width:58px;height:5px;border-radius:99px;background:rgba(255,240,230,.22)}
-.phone img{width:100%;display:block;border-radius:20px}
-.peek figcaption{font-size:clamp(15.5px,1.2vw,17.5px);color:#C9B6AB;line-height:1.65;text-align:right}
-.peek figcaption b{display:block;font-weight:900;color:#FFF9F5;font-size:clamp(19px,1.6vw,25px);
-  line-height:1.25;margin-bottom:9px}
+
+.peeknotes{display:grid;gap:clamp(16px,2.2vw,26px);max-width:900px;
+  margin:clamp(30px,3.6vw,46px) auto 0;text-align:right}
+@media(min-width:720px){.peeknotes{grid-template-columns:repeat(3,1fr)}}
+.peeknotes div{font-size:clamp(14.5px,1.1vw,16px);color:#C9B6AB;line-height:1.6;
+  border-top:1px solid rgba(237,226,218,.22);padding-top:13px}
+.peeknotes b{display:block;font-weight:900;color:#FFF9F5;
+  font-size:clamp(16.5px,1.3vw,19px);line-height:1.3;margin-bottom:6px}
 
 /* ---------- anchor / deadline note ---------- */
 .anchor{margin-top:16px;font-size:16px;color:var(--sand);max-width:44ch;margin-inline:auto;line-height:1.5}
@@ -533,31 +541,19 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       </div>
     </div>
 
-    <div class="peek">
-      <figure class="rv">
-        <div class="phone"><img src="preview/p1.jpg" alt="תחנה 01 · מה כל אחד שומע כשמבקשים הפסקה"></div>
-        <figcaption>
-          <b>״בוא נעצור״ נשמע כמו נטישה</b>
-          שניכם עונים על אותו מסך, כל אחד בטור שלו, ורואים בזמן אמת מה השני סימן. זה הרגע שבו מתגלה הפער.
-        </figcaption>
-      </figure>
-      <figure class="rv">
-        <div class="phone"><img src="preview/p2.jpg" alt="תחנה 03 · איך נראית הזמנה לחיבור שלא נספרה"></div>
-        <figcaption>
-          <b>ההזמנה שלא נספרה</b>
-          כל תחנה נפתחת במסר קולי קצר ממני, ואחריו תרגיל. עשרים דקות, מהטלפון, ואפשר לעצור באמצע ולחזור לאותו מקום.
-        </figcaption>
-      </figure>
-      <figure class="rv">
-        <div class="phone"><img src="preview/p3.jpg" alt="תחנה 04 · שתי גרסאות לאותו ריב"></div>
-        <figcaption>
-          <b>שתי חוויות, אותו ריב</b>
-          בסוף כל תחנה נבנית לכם מפה: מילת הקוד שעוצרת ריב, מי מחזיר לשיחה, ומה כל אחד עושה בפעם הבאה. מדפיסים, ותולים על המקרר.
-        </figcaption>
-      </figure>
+    <div class="fan rv">
+      <div class="phone p-a"><img src="preview/p2.jpg" alt="תחנה 03 · הזמנה לחיבור שלא נספרה"></div>
+      <div class="phone p-c"><img src="preview/p3.jpg" alt="תחנה 04 · שתי גרסאות לאותו ריב"></div>
+      <div class="phone p-b"><img src="preview/p1.jpg" alt="תחנה 01 · מה כל אחד שומע כשמבקשים הפסקה"></div>
     </div>
 
-    <p class="hand rv" style="margin-top:clamp(28px,3.4vw,44px)">
+    <div class="peeknotes rv">
+      <div><b>״בוא נעצור״ נשמע כמו נטישה</b>שניכם עונים על אותו מסך, ורואים בזמן אמת מה השני סימן.</div>
+      <div><b>ההזמנה שלא נספרה</b>כל תחנה נפתחת במסר קולי ממני, ואחריו תרגיל קצר.</div>
+      <div><b>שתי חוויות, אותו ריב</b>ובסוף נבנית לכם מפה, שמדפיסים ותולים על המקרר.</div>
+    </div>
+
+    <p class="hand rv" style="margin-top:clamp(22px,2.6vw,32px)">
       ואם בן או בת הזוג עדיין לא שם, אפשר לעבור את זה לבד ולהביא אליהם את מה שגיבשתם
     </p>
   </div>
