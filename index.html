@@ -153,6 +153,14 @@ b,strong{font-weight:900;color:var(--ink)}
 .trans{margin-top:18px;font-size:clamp(17px,1.35vw,19.5px)!important;font-weight:900;
   color:var(--crim);line-height:1.45;max-width:50ch!important}
 
+.twoparts{display:grid;gap:clamp(18px,2.6vw,30px);max-width:880px;margin:clamp(28px,3.4vw,44px) auto 0}
+@media(min-width:720px){.twoparts{grid-template-columns:1fr 1fr}}
+.twoparts > div{background:var(--paper);border:1px solid var(--hair);border-radius:16px;
+  padding:clamp(22px,2.8vw,32px) clamp(20px,2.6vw,30px);text-align:right}
+.twoparts .pnum{display:block;font-size:12px;font-weight:900;letter-spacing:.2em;color:var(--crim-soft);opacity:.75}
+.twoparts h3{margin-top:8px;color:var(--ink)}
+.twoparts .plen{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--crim);margin-top:4px}
+.twoparts p{font-size:clamp(15.5px,1.2vw,17px);line-height:1.66;margin-top:12px;max-width:none;padding-inline:0}
 .gift{margin-top:clamp(20px,2.4vw,30px);border:1px dashed var(--crim-soft);border-radius:14px;
   padding:clamp(16px,2.2vw,24px) clamp(16px,2.6vw,26px);text-align:center;max-width:560px;margin-inline:auto}
 .gift .gname{font-weight:900;color:var(--crim);font-size:clamp(15.5px,1.4vw,18px);line-height:1.4;margin-top:8px}
@@ -391,7 +399,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
   <div class="wrap">
     <p class="say rv">אתם לא רבים יותר מדי. אתם פשוט לא יודעים איך לחזור.</p>
     <p class="scene rv">הפיצוץ נגמר, אבל בסלון יש שקט מעיק. כל אחד תופס צד, המבטים קרים, ואף אחד לא רוצה לרדת מהעץ ראשון.</p>
-    <p class="core rv">במקום לגרור את הברוגז ימים, או לטאטא הכל מתחת לשטיח רק כדי שזה יתפוצץ שוב בעוד שבוע, יצרתי עבורכם דרך מעשית ומדויקת: <span class="mark">איך לעצור את ההסלמה ברגע האמת</span>, <span class="mark">לרכך את הנוקשות</span> בלי לוותר על מה שחשוב, ולחזור לשיחה <span class="mark">שבאמת פותרת משהו</span>.</p>
+    <p class="core rv">הרצאה של שעה ועשרים, ואחריה <span class="mark">תהליך אינטראקטיבי בחמש תחנות</span> שבו אתם עושים את זה בפועל: עוצרים את ההסלמה, <span class="mark">מרככים את הנוקשות</span>, וחוזרים לשיחה שבאמת פותרת משהו. בלי לטאטא מתחת לשטיח.</p>
     <p class="auth rv">אחרי 8 שנים ומעל 1,000 נשים וזוגות שליוויתי ברגעים הכי מתוחים, זיקקתי את מה שבאמת מחזיר את הקִרבה. צעד אחר צעד, בחמש תחנות פשוטות וברורות ליום שאחרי.</p>
     <div class="cta-big rv">
       <a class="btn gold" href="#buy">בול בשבילנו, רוצים להתחיל! <i>←</i></a>
@@ -448,6 +456,32 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <li><span class="m">03</span><span class="x">האם שיחת התיקון מייצרת הבנה הדדית, או שכל צד מתבצר כדי להוכיח שהוא הצודק?</span></li>
     </ul>
     <p class="rv" style="margin-top:28px">תיקון אמיתי מאפשר לכם להבין מה קרה לכל אחד מכם, לקחת אחריות, ולבנות דרך פעולה יציבה יותר לפעם הבאה.</p>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="htxt">
+        <span class="tag c">מה זה כולל</span>
+        <h2>שני חלקים</h2>
+      </div>
+    </div>
+    <div class="rulez"></div>
+    <div class="twoparts rv">
+      <div>
+        <span class="pnum">01</span>
+        <h3>ההרצאה</h3>
+        <p class="plen">שעה ועשרים</p>
+        <p>למה זה קורה לכם דווקא ככה, מה באמת מתרחש מתחת לריב, ולמה הדברים שניסיתם עד היום לא עבדו. זה החלק שבו הכול מתחיל להסתדר.</p>
+      </div>
+      <div>
+        <span class="pnum">02</span>
+        <h3>התהליך</h3>
+        <p class="plen">חמש תחנות</p>
+        <p>ומכאן אתם עושים. שניכם על מסך אחד, עונים, בוחרים ומסכימים, ויוצאים עם מילת קוד, עם צעדים לכל אחד ועם מפה שאפשר לתלות.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -544,7 +578,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="head rv">
       <div class="htxt">
         <span class="tag">הצצה פנימה</span>
-        <h2>לא קורס שמאזינים לו.<br>תהליך שעוברים אותו.</h2>
+        <h2>קודם מבינים.<br>ואז עושים.</h2>
       </div>
     </div>
 
@@ -686,15 +720,16 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     </div>
     <div class="rulez"></div>
     <ul class="rows two rv">
-      <li><span class="m">01</span><span class="x">גישה מלאה וללא הגבלת זמן לתוכנית הזוגית האינטראקטיבית בחמש תחנות.</span></li>
-      <li><span class="m">02</span><span class="x">חמש תחנות עבודה מעשיות, קצרות וממוקדות.</span></li>
-      <li><span class="m">03</span><span class="x">שאלות אישיות ומעמיקות לכל אחד מבני הזוג.</span></li>
-      <li><span class="m">04</span><span class="x">תבניות ונוסחי שיחה לחזרה ולתיקון בזמן אמת.</span></li>
-      <li><span class="m">05</span><span class="x">מסר קולי קצר ממני בפתיחת כל תחנה, ואחד לפני שמתחילים.</span></li>
-      <li><span class="m">06</span><span class="x">מפה זוגית מסכמת בסיום כל שלב.</span></li>
-      <li><span class="m">07</span><span class="x">מפת הקאמבק המלאה להדפסה, לשמירה ולשימוש חוזר.</span></li>
-      <li><span class="m">08</span><span class="x">חוזה שעת חירום וגלויה לשמירה בטלפון, עם מילות הקוד שהסכמתם עליהן.</span></li>
-      <li><span class="m">09</span><span class="x">אפשרות לעבור את התהליך גם לבד, אם בן או בת הזוג עדיין לא שם.</span></li>
+      <li><span class="m">01</span><span class="x">הרצאה מוקלטת של שעה ועשרים, לצפייה מתי שנוח לכם.</span></li>
+      <li><span class="m">02</span><span class="x">גישה מלאה וללא הגבלת זמן לתוכנית הזוגית האינטראקטיבית בחמש תחנות.</span></li>
+      <li><span class="m">03</span><span class="x">חמש תחנות עבודה מעשיות, קצרות וממוקדות.</span></li>
+      <li><span class="m">04</span><span class="x">שאלות אישיות ומעמיקות לכל אחד מבני הזוג.</span></li>
+      <li><span class="m">05</span><span class="x">תבניות ונוסחי שיחה לחזרה ולתיקון בזמן אמת.</span></li>
+      <li><span class="m">06</span><span class="x">מסר קולי קצר ממני בפתיחת כל תחנה, ואחד לפני שמתחילים.</span></li>
+      <li><span class="m">07</span><span class="x">מפה זוגית מסכמת בסיום כל שלב.</span></li>
+      <li><span class="m">08</span><span class="x">מפת הקאמבק המלאה להדפסה, לשמירה ולשימוש חוזר.</span></li>
+      <li><span class="m">09</span><span class="x">חוזה שעת חירום וגלויה לשמירה בטלפון, עם מילות הקוד שהסכמתם עליהן.</span></li>
+      <li><span class="m">10</span><span class="x">אפשרות לעבור את התהליך גם לבד, אם בן או בת הזוג עדיין לא שם.</span></li>
     </ul>
     <div class="price rv" id="buy">
       <span class="l" id="pricelbl">מחיר השקה · רכישה אחת לשני בני הזוג</span>
