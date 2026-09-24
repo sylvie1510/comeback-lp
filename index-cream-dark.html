@@ -1,0 +1,553 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="איך מתקנים אחרי ריב בלי ימים של שתיקה ובלי לטאטא מתחת לשטיח. תהליך זוגי דיגיטלי ואינטראקטיבי בחמש תחנות, עם סילבי פרידמן. גישה מיידית ולכל החיים.">
+<meta property="og:title" content="הקאמבק · התהליך הזוגי שילמד אתכם איך לחזור אחד אל השנייה אחרי ריב">
+<meta property="og:description" content="בלי ימים של שתיקה ובלי לטאטא מתחת לשטיח. תהליך זוגי דיגיטלי בחמש תחנות, גישה מיידית ולכל החיים.">
+<meta property="og:type" content="website">
+<title>הקאמבק · תהליך זוגי דיגיטלי עם סילבי פרידמן</title>
+<style>
+@font-face{font-family:'Polin';src:url(fonts/Polin-Light.otf) format('opentype');font-weight:300;font-display:block}
+@font-face{font-family:'Polin';src:url(fonts/Polin-Black.otf) format('opentype');font-weight:900;font-display:block}
+
+:root{
+  --cream:#EEE2D8;
+  --paper:#F7F1EA;
+  --coffee:#290F0B;
+  --wafer:#C4A998;
+  --toffee:#7B5A46;
+  --cherry:#B81414;
+  --cocoa:#6E564D;
+  --sand:#B59A8E;
+  --line:#E3D5C8;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100%}
+body{
+  font-family:'Polin',system-ui,sans-serif;font-weight:300;
+  direction:rtl;text-align:center;color:var(--coffee);background:var(--cream);
+  -webkit-font-smoothing:antialiased;line-height:1.6;
+}
+b,strong{font-weight:900}
+img{max-width:100%;display:block}
+
+/* ---------- shell ---------- */
+section{padding:clamp(60px,8.5vw,116px) clamp(20px,5vw,60px)}
+.w{max-width:1120px;margin:0 auto}
+.t{max-width:760px;margin:0 auto}
+
+h1{font-weight:900;font-size:clamp(56px,12vw,140px);line-height:.88;letter-spacing:-.045em}
+h2{font-weight:900;font-size:clamp(29px,4.4vw,52px);line-height:1.08;letter-spacing:-.028em;text-wrap:balance}
+h3{font-weight:900;font-size:clamp(20px,2.5vw,27px);line-height:1.16;letter-spacing:-.02em}
+h4{font-weight:900;font-size:19.5px;line-height:1.22;letter-spacing:-.01em}
+p{font-size:clamp(17.5px,1.95vw,20.5px);color:var(--cocoa);margin:20px auto 0;max-width:60ch}
+p.big{font-size:clamp(20px,2.4vw,26px);color:var(--coffee);line-height:1.4}
+
+/* Hebrew micro-labels never in mono: it falls back to a thin system face and disappears */
+.kick{font-weight:900;font-size:clamp(14px,1.5vw,16px);letter-spacing:.04em;
+  color:var(--cherry);margin-bottom:16px;display:block;line-height:1.3}
+.lat{font-family:var(--mono);font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.rule{height:4px;width:64px;background:var(--cherry);margin:22px auto 28px}
+.ifs .if,.outs .out{border-radius:6px;position:relative;padding-inline-start:52px}
+.ifs .if::before,.outs .out::before{content:"";position:absolute;inset-inline-start:24px;top:34px;
+  width:10px;height:10px;border-radius:50%;background:var(--cherry)}
+.outs .out::before{background:var(--wafer)}
+.bump{margin:18px 0 4px;text-align:right;background:rgba(255,255,255,.07);
+  border:1px dashed rgba(255,255,255,.38);border-radius:6px;padding:16px 18px}
+.bump label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;
+  font-size:15.5px;line-height:1.5;font-weight:700}
+.bump input{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--cherry)}
+.bump b{font-weight:900}
+.statnum{font-weight:900;font-size:clamp(78px,13vw,168px);line-height:.85;letter-spacing:-.05em;color:var(--cherry);margin:6px 0 4px}
+.s-coffee .statnum{color:var(--wafer)}
+.statlead{font-size:clamp(19px,2.1vw,24px);font-weight:900;line-height:1.45;max-width:640px;margin:0 auto}
+.statnote{font-size:clamp(15px,1.6vw,17px);opacity:.72;margin-top:10px}
+.statline{height:1px;background:currentColor;opacity:.22;max-width:420px;margin:34px auto}
+
+/* ---------- surfaces ---------- */
+.s-cream{background:var(--cream)}
+.s-paper{background:var(--paper);border-block:1px solid var(--line)}
+.s-coffee{background:var(--coffee);color:var(--cream)}
+.s-coffee h2,.s-coffee h3,.s-coffee h4,.s-coffee p.big{color:var(--cream)}
+.s-coffee p{color:var(--sand)}
+.s-coffee .kick{color:var(--wafer)}
+.s-coffee .rule{background:var(--wafer)}
+.s-wafer{background:var(--toffee);color:#FFFFFF}
+.s-wafer h2,.s-wafer h3,.s-wafer h4{color:#FFFFFF}
+.s-wafer p{color:#EFE3DA}
+.s-wafer .kick{color:#F0DFD2}
+.s-wafer .rule{background:#FFFFFF}
+.s-cherry{background:var(--cherry);color:var(--cream)}
+.s-cherry h2{color:var(--cream)}
+.s-cherry p{color:#F3D6D6}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;margin-top:30px;padding:19px 42px;
+  background:var(--cherry);color:var(--cream);font-weight:900;font-size:clamp(17px,1.9vw,20px);
+  border-radius:2px;text-decoration:none;border:0;cursor:pointer;letter-spacing:-.01em;
+  transition:background .16s ease}
+.btn:hover{background:var(--coffee)}
+.btn:focus-visible{outline:2px solid var(--cherry);outline-offset:3px}
+.s-coffee .btn:focus-visible,.s-wafer .btn:focus-visible,.s-cherry .btn:focus-visible{outline-color:#FFFFFF}
+.s-cherry .btn{background:var(--cream);color:var(--cherry)}
+.s-cherry .btn:hover{background:var(--coffee);color:var(--cream)}
+.s-wafer .btn{background:#FFFFFF;color:var(--toffee)}
+.s-wafer .btn:hover{background:var(--cherry);color:#FFFFFF}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(34px,5vw,60px);padding-bottom:clamp(52px,7vw,90px)}
+.hero .topbar{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  padding-bottom:22px;margin-bottom:clamp(28px,4vw,46px);
+  border-bottom:1px solid rgba(196,169,152,.3);
+  font-weight:900;font-size:14px;letter-spacing:.02em;color:var(--wafer)}
+.hero .topbar i{font-style:normal;opacity:.55}
+.portrait{width:clamp(190px,26vw,250px);margin:0 auto clamp(24px,3.4vw,36px);
+  border:1px solid rgba(196,169,152,.4)}
+.portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%}
+.portrait .cap{font-weight:900;font-size:13px;color:var(--wafer);
+  padding:10px 8px;border-top:1px solid rgba(196,169,152,.4)}
+.hero .sub{font-size:clamp(21px,2.9vw,34px);font-weight:900;line-height:1.26;
+  letter-spacing:-.02em;margin-top:24px;color:var(--cream)}
+.hero .wink{font-weight:300;font-size:.68em;color:var(--wafer);white-space:nowrap}
+.hero .hook{font-size:clamp(17px,2.1vw,22px);font-weight:900;line-height:1.35;
+  color:var(--wafer);margin-top:18px;max-width:46ch;margin-inline:auto}
+.hero .promise{font-size:clamp(17px,1.95vw,20px);color:var(--wafer);margin-top:22px;max-width:54ch}
+.hero .promise + .promise{margin-top:14px}
+.hero .meta{font-weight:900;font-size:15px;letter-spacing:.02em;color:var(--wafer);margin-top:26px}
+.hero .under{font-size:15px;font-weight:900;color:var(--wafer);margin-top:14px;opacity:.92}
+
+.trustbar{display:flex;justify-content:center;margin-top:clamp(34px,5vw,54px);
+  border-top:1px solid rgba(196,169,152,.28);flex-wrap:wrap}
+.trustbar div{flex:1 1 170px;padding:22px 10px 0;display:flex;flex-direction:column;gap:5px}
+.trustbar b{font-weight:900;font-size:clamp(26px,3.4vw,40px);line-height:1;letter-spacing:-.03em;color:var(--cream)}
+.trustbar span{font-weight:900;font-size:13.5px;letter-spacing:.02em;color:var(--wafer)}
+
+/* light hero variant */
+.hero-light{border-bottom:3px solid var(--coffee)}
+.hero-light .topbar{color:var(--cocoa);border-bottom-color:var(--line)}
+.hero-light h1,.hero-light .sub{color:var(--coffee)}
+.hero-light .wink{color:var(--cherry)}
+.hero-light .promise{color:var(--cocoa)}
+.hero-light .meta{color:var(--cherry)}
+.hero-light .under{color:var(--cocoa)}
+.hero-light .portrait{border-color:var(--line)}
+.hero-light .portrait .cap{color:var(--coffee);border-top-color:var(--line);background:var(--paper)}
+.hero-light .trustbar{border-top-color:var(--coffee)}
+.hero-light .trustbar b{color:var(--cherry)}
+.hero-light .trustbar span{color:var(--cocoa)}
+
+/* ---------- escalation chain ---------- */
+.chain{max-width:640px;margin:clamp(30px,4vw,46px) auto 0;display:flex;flex-direction:column}
+.chain .step{background:var(--paper);border:1px solid var(--line);padding:18px 24px;
+  font-size:clamp(17px,1.95vw,20px);font-weight:900;line-height:1.36;letter-spacing:-.012em}
+.chain .ar{color:var(--cherry);font-size:24px;font-weight:900;line-height:1;margin:10px auto}
+.chain .step.end{background:var(--cherry);color:var(--cream);border-color:var(--cherry)}
+
+/* ---------- qualifier list ---------- */
+.ifs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;
+  background:rgba(255,255,255,.28);margin-top:clamp(28px,4vw,44px);border:1px solid rgba(255,255,255,.28)}
+.ifs .if{background:var(--toffee);padding:28px 24px;font-size:clamp(16.5px,1.9vw,19.5px);
+  font-weight:900;line-height:1.36;letter-spacing:-.012em;color:#FFFFFF;
+  display:flex;align-items:center;justify-content:center}
+
+/* ---------- stations: circled number on a dashed route ---------- */
+.stations{max-width:760px;margin:clamp(34px,4.6vw,56px) auto 0;position:relative;text-align:right}
+.stations::before{content:"";position:absolute;top:34px;bottom:44px;right:31px;width:2px;
+  background:repeating-linear-gradient(to bottom,var(--wafer) 0 8px,transparent 8px 16px)}
+.st{position:relative;padding:0 92px 44px 0}
+.st:last-child{padding-bottom:0}
+.st .n{position:absolute;right:0;top:0;width:64px;height:64px;border-radius:50%;
+  background:var(--cream);border:2px solid var(--cherry);color:var(--cherry);
+  display:grid;place-items:center;font-weight:900;font-size:27px;line-height:1;z-index:2}
+.st .en{font-family:var(--mono);font-weight:700;font-size:13.5px;letter-spacing:.16em;
+  color:var(--cocoa);padding-top:9px;display:block}
+.st h3{margin-top:5px}
+.st ul{margin-top:15px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.st li{position:relative;padding-inline-start:20px;font-size:clamp(16.5px,1.85vw,19px);
+  color:var(--cocoa);line-height:1.5}
+.st li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;height:7px;background:var(--wafer)}
+.st li b{color:var(--coffee)}
+@media(max-width:600px){
+  .stations::before{right:23px;top:26px}
+  .st{padding:0 62px 34px 0}
+  .st .n{width:48px;height:48px;font-size:21px}
+}
+
+/* ---------- generic grids ---------- */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(28px,4vw,44px)}
+.imgcard{border:1px solid var(--line);background:var(--paper)}
+.s-wafer .imgcard{border-color:rgba(255,255,255,.3)}
+.imgcard img{width:100%}
+
+.outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;
+  background:rgba(196,169,152,.3);margin-top:clamp(28px,4vw,44px);border:1px solid rgba(196,169,152,.3)}
+.outs .out{background:var(--coffee);padding:28px 24px;font-size:clamp(16.5px,1.9vw,19.5px);
+  font-weight:900;line-height:1.36;color:var(--cream);letter-spacing:-.012em;
+  display:flex;align-items:center;justify-content:center}
+
+.logi{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(22px,3vw,40px);margin-top:clamp(28px,4vw,44px)}
+.lg{padding-top:18px;border-top:3px solid var(--cherry)}
+.lg p{font-size:17.5px;margin-top:10px}
+
+.stats{display:flex;justify-content:center;margin-top:clamp(30px,4.5vw,50px);
+  border-top:2px solid var(--coffee);flex-wrap:wrap}
+.stats .stat{flex:1 1 180px;padding:24px 10px 0;display:flex;flex-direction:column;gap:5px}
+.stats b{font-weight:900;font-size:clamp(34px,5vw,62px);line-height:.94;letter-spacing:-.04em;color:var(--cherry)}
+.stats span{font-weight:900;font-size:14px;letter-spacing:.02em;color:var(--cocoa)}
+
+/* ---------- thesis ---------- */
+.thesis{background:var(--toffee);color:#FFFFFF;padding:clamp(56px,8vw,110px) clamp(20px,5vw,60px)}
+.thesis p{font-size:clamp(24px,3.6vw,44px);font-weight:900;line-height:1.18;letter-spacing:-.028em;
+  color:#FFFFFF;max-width:24ch;margin:0 auto}
+.thesis .mark{font-weight:900;font-size:14px;letter-spacing:.03em;
+  color:#F0DFD2;margin-bottom:20px;display:block}
+
+/* ---------- faq ---------- */
+.faq{max-width:760px;margin:clamp(28px,4vw,40px) auto 0;text-align:right}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:2px solid var(--coffee)}
+summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:900;
+  font-size:clamp(17px,2vw,21px);letter-spacing:-.015em;display:flex;gap:14px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:var(--mono);color:var(--cherry);font-size:19px;flex-shrink:0}
+details[open] summary::before{content:"−"}
+details p{margin:0;padding-bottom:8px;font-size:17.5px;max-width:none}
+details p:last-child{padding-bottom:22px}
+details p.em{color:var(--coffee);font-weight:900}
+
+/* ---------- buy ---------- */
+.buybox{margin:clamp(30px,4vw,46px) auto 0;border:2px solid var(--wafer);
+  padding:clamp(26px,3.6vw,44px);display:flex;flex-direction:column;align-items:center;gap:7px;max-width:520px}
+.buybox .n{font-weight:900;font-size:clamp(46px,7vw,86px);line-height:.9;letter-spacing:-.045em;color:var(--cream)}
+.buybox .l{font-weight:900;font-size:14.5px;letter-spacing:.02em;color:var(--wafer)}
+
+footer{background:var(--coffee);color:var(--wafer);padding:34px clamp(20px,5vw,60px) 110px;
+  font-weight:900;font-size:14px;letter-spacing:.02em;
+  border-top:1px solid rgba(196,169,152,.25)}
+
+#sticky{position:fixed;inset-inline:0;bottom:0;z-index:50;background:var(--coffee);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:11px clamp(14px,4vw,40px);border-top:2px solid var(--cherry);text-align:right}
+#sticky .p{display:flex;flex-direction:column;color:var(--cream);font-weight:900;font-size:16px;line-height:1.2}
+#sticky .p small{font-weight:900;font-size:12.5px;letter-spacing:.01em;color:var(--wafer);margin-top:3px}
+#sticky a{background:var(--cherry);color:var(--cream);text-decoration:none;font-weight:900;
+  font-size:15px;padding:12px 20px;border-radius:2px;white-space:nowrap}
+#sticky a:hover{background:var(--wafer);color:var(--coffee)}
+@media(max-width:520px){#sticky .p{font-size:13px}#sticky a{font-size:13px;padding:11px 14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<!-- ============ 1 HERO ============ -->
+<section class="s-coffee hero">
+  <div class="w">
+    <div class="topbar">
+      <span class="lat" style="font-size:12px">Sylvie Friedman · Selfish Love</span>
+      <i>·</i>
+      <span>תהליך זוגי דיגיטלי · חמש תחנות</span>
+    </div>
+    <div class="t">
+      <div class="portrait">
+        <img src="comeback-portrait.jpg" alt="סילבי פרידמן">
+        <div class="cap">סילבי פרידמן · מאמנת זוגות</div>
+      </div>
+      <h1>הקאמבק</h1>
+      <div class="sub">אתם לא רבים יותר מדי.<br>אתם פשוט לא יודעים איך לחזור.</div>
+      <p class="hook">התהליך הדיגיטלי האינטראקטיבי שיחזיר אתכם לדבר תוך 24 שעות.</p>
+      <p class="promise">זה לא קורס שילמד אתכם לא לריב. זה תהליך שילמד אתכם לחזור מהר יותר, במקום לשרוף סופי שבוע שלמים של שתיקות.</p>
+      <p class="promise">תהליך זוגי דיגיטלי ואינטראקטיבי שלוקח את שניכם דרך חמש תחנות — מהרגע שאיבדתם אחד את השנייה ועד שמצאתם את הדרך בחזרה. בלי ימים של ברוגז, ובלי עוד שיחת תיקון שנופלת שוב לאותו לופ.</p>
+      <div class="meta">חמש תחנות · עונים ומתרגלים על המסך · מפת קאמבק אישית · גישה מיידית ולכל החיים</div>
+      <a class="btn" href="#buy">אני רוצה גישה מיידית · 297 ₪</a>
+      <div class="under">🔒 תשלום מאובטח · הגישה נפתחת מיידית</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ 2 THE SCRIPT ============ -->
+<section class="s-cream">
+  <div class="w">
+    <div class="t">
+      <span class="kick">רגע לפני</span>
+      <h2>מכירים את התסריט הזה?</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="chain">
+      <div class="step">משהו קטן קורה</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step">אחד נסגר וחייב שקט, השני נלחץ ולוחץ לקיר לפתור עכשיו</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step">הטונים עולים</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step">אחד מרגיש שהוא שוב נכשל, השני מרגיש לבד ונטוש</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step">הולכים לישון בגב מופנה</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step">יום־יומיים מדברים רק על הילדים</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step">כל אחד אוסף בראש הוכחות למה הוא הצודק והנפגע</div>
+      <div class="ar" aria-hidden="true">↓</div>
+      <div class="step end">מטאטאים מתחת לשטיח, עד הפיצוץ הבא.</div>
+    </div>
+    <div class="t" style="margin-top:clamp(30px,4vw,48px)">
+      <p class="big"><b>זה מתיש, וזה שורף לכם את הבית.</b></p>
+      <div class="statline" style="max-width:340px;margin:32px auto"></div>
+      <p class="big">פרידה אמיתית היא לא רק לפרק את החבילה ברבנות.<br><b>פרידה היא לחיות ביחד באותו סלון ולהרגיש בנפרד.</b></p>
+      <p class="big" style="margin-top:26px">מה שקובע את עתיד הקשר שלכם הוא לא היכולת להימנע מריב, אלא דבר אחד בלבד:<br><b>איך ומתי אתם חוזרים.</b></p>
+      <p class="big" style="margin-top:26px">ביטחון זוגי לא נבנה מזה שאין ויכוחים או חיכוכים. הוא נבנה מהידיעה הוודאית שיש לכם דרך בטוחה ומכבדת לעצור, לדעת איך לתקן באמת, ולמצוא שוב זה את זו עוד באותו הערב.</p>
+      <p style="margin-top:22px"><b>וזו בדיוק המיומנות שאף אחד לא לימד אתכם, והחוליה הכי חלשה ששורפת לכם את השקט בבית.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 QUALIFIERS ============ -->
+<section class="s-wafer">
+  <div class="w">
+    <div class="t">
+      <span class="kick">למי זה מתאים</span>
+      <h2>הקאמבק הוא בשבילכם</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="ifs">
+      <div class="if">אם אתם לא מדברים ימים אחרי ריב, חוץ מלוגיסטיקה.</div>
+      <div class="if">אם אתם מחכים שהזמן יעבור ומטאטאים את הריב מתחת לשטיח.</div>
+      <div class="if">אם כבר הרמתם ידיים מלנסות לדבר, כי כל ניסיון לסגור את מה שקרה שוב הופך לריב.</div>
+      <div class="if">אם אתם רוצים להשלים מהר יותר, במקום להרגיש שכל ריב מרחיק ביניכם עוד קצת.</div>
+      <div class="if">אם אתם נמנעים מלפתוח נושאים חשובים, רק כדי לא להיכנס שוב לאותו מעגל.</div>
+      <div class="if">ואם אתם רוצים לנהל שיחת שלום גם כשהיא לא נעימה, ולצלוח אותה בלי להתפוצץ מחדש.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 WHAT YOU LEARN ============ -->
+<section class="s-cream">
+  <div class="w">
+    <div class="t">
+      <span class="kick">מה לומדים</span>
+      <h2>אתם לא צריכים ״לתקשר טוב יותר״.</h2>
+      <div class="rule"></div>
+      <p class="big">אתם צריכים לדעת מה עושים בכל שלב אחרי שהריב מתחיל.</p>
+      <p><b>חמש תחנות, מהרגע שאיבדתם אחד את השנייה ועד שמצאתם את הדרך בחזרה:</b></p>
+    </div>
+    <div class="stations">
+      <div class="st">
+        <span class="n">1</span>
+        <span class="en">STOP</span>
+        <h3>עוצרים את ההרס</h3>
+        <ul>
+          <li>איך לעצור את ההצפה הפיזיולוגית לפני שנאמר משהו שאי אפשר לקחת בחזרה</li>
+          <li>המשפט המוסכם שמונע מהצד השני להרגיש נטוש או מושתק</li>
+        </ul>
+      </div>
+      <div class="st">
+        <span class="n">2</span>
+        <span class="en">SPACE</span>
+        <h3>הורדת דופק</h3>
+        <ul>
+          <li>מה עושים ב־20 הדקות שבין הריב לשיחה</li>
+          <li>איך לתת לסערה הביולוגית לחלוף בלי להזין אותה</li>
+          <li>ואיך מפסיקים לבנות ״תיק פלילי״ בראש, כדי להגיע לשיחה נקיים</li>
+        </ul>
+      </div>
+      <div class="st">
+        <span class="n">3</span>
+        <span class="en">RETURN</span>
+        <h3>נקודת מפגש חזרה</h3>
+        <ul>
+          <li>לשבור את הקרח בלי להרגיש שנכנעתם</li>
+          <li>איך לזהות את הניסיונות המגושמים להתקרב (כמו ״רוצה קפה?״) בלי להפוך אותם לריב חדש</li>
+          <li>ואיך להושיט יד ראשונים בלי למחוק את עצמכם</li>
+        </ul>
+      </div>
+      <div class="st">
+        <span class="n">4</span>
+        <span class="en">REPAIR</span>
+        <h3>שיחת תיקון שמפנה מקום לשניכם</h3>
+        <ul>
+          <li>יושבים לדבר בלי צדקנות של בית משפט</li>
+          <li>איך לדבר על מה שפגע בלי להעלות תקדימים מהעבר</li>
+          <li>וחוקי הברזל שמאפשרים לשניכם להישמע ולהיות צוות מול הבעיה</li>
+        </ul>
+      </div>
+      <div class="st">
+        <span class="n">5</span>
+        <span class="en">RECONNECT</span>
+        <h3>מחוברים מחדש, גבוה יותר מנקודת ההתחלה</h3>
+        <ul>
+          <li>ההבדל בין סגירה טכנית של ״נשכח מזה״, שמשאירה טינה, לבין חזרה למגע, אינטימיות וביטחון אמיתי</li>
+          <li>ואיך יוצאים מכל ריב כשהקשר חזק יותר, לא חלש יותר</li>
+        </ul>
+      </div>
+    </div>
+    <div class="t">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 MID CTA ============ -->
+<section class="s-cherry" style="padding-top:clamp(46px,6vw,78px);padding-bottom:clamp(46px,6vw,78px)">
+  <div class="w t">
+    <h2>מתחילים הערב.<br>משתמשים בזה בריב הבא.</h2>
+    <a class="btn" href="#buy">למעבר לרכישה וגישה מיידית · 297 ₪</a>
+    <p style="font-size:16px;font-weight:900;margin-top:18px;color:#F3D6D6">חמש תחנות · מפת קאמבק אישית · גישה לכל החיים</p>
+  </div>
+</section>
+
+<!-- ============ 6 QUESTIONS ============ -->
+<section class="s-paper">
+  <div class="w">
+    <div class="t">
+      <span class="kick">מה שאתם כבר שואלים אותי</span>
+      <h2>ואם כבר חשבתם ״כן, אבל מה עושים כש…?״</h2>
+      <div class="rule"></div>
+      <p>אספתי את השאלות הכי בוערות ששלחתם לי בסטורי, ותפרתי את התשובות והכלים לתוכן ישירות לתוך התחנות של הקאמבק.</p>
+    </div>
+    <div class="grid3">
+      <div class="imgcard"><img src="questions/q1.jpeg" alt="שאלה מהקהילה"></div>
+      <div class="imgcard"><img src="questions/q2.jpeg" alt="שאלה מהקהילה"></div>
+      <div class="imgcard"><img src="questions/q3.jpeg" alt="שאלה מהקהילה"></div>
+    </div>
+    <div class="t"><p style="font-size:17.5px;font-weight:900">אם שלחת לי שאלה, סביר מאוד שהיא בפנים.</p></div>
+  </div>
+</section>
+
+<!-- ============ 7 OUTCOMES ============ -->
+<section class="s-coffee">
+  <div class="w">
+    <div class="t">
+      <span class="kick">מה משתנה</span>
+      <h2>בפעם הבאה שתריבו, לא תשחזרו את אותו לופ.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="outs">
+      <div class="out">לא תצטרכו יותר לחכות ימים עד שמישהו ישבור את השתיקה.</div>
+      <div class="out">לא תרגישו שכל ריב מסכן את הזוגיות שלכם.</div>
+      <div class="out">תדעו איך לרדת מהעץ גם כשאתם פגועים.</div>
+      <div class="out">תפסיקו להרגיש חסרי אונים מול הריב הבא.</div>
+      <div class="out">תדעו שיש לכם דרך לחזור אחד אל השנייה, גם אחרי שיחה קשה.</div>
+      <div class="out">ותרגישו בטוחים יותר ביכולת שלכם לעבור קונפליקט בלי לאבד את הקרבה.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 THESIS ============ -->
+<div class="thesis">
+  <div class="w">
+    <span class="mark">כל הרעיון</span>
+    <p>זוגיות טובה היא לא זוגיות שאין בה ריבים. <b>היא זוגיות שיודעת לעשות קאמבק.</b></p>
+  </div>
+</div>
+
+<!-- ============ 9 LOGISTICS ============ -->
+<section class="s-cream">
+  <div class="w">
+    <div class="t">
+      <span class="kick">איך זה עובד</span>
+      <h2>שלושה דברים שכדאי לדעת</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="logi">
+      <div class="lg"><h4>גישה מיידית, ולכל החיים</h4><p>רוכשים, ומקבלים גישה מיד. בלי לחכות לתאריך, ובלי תאריך תפוגה. התהליך נשאר שלכם — גם בעוד שנה, כשתצטרכו אותו שוב.</p></div>
+      <div class="lg"><h4>לבד או ביחד</h4><p>אפשר לעבור את זה שניכם מול מסך אחד, ואפשר כל אחד בזמן שלו ואז להשוות. שתי הדרכים עובדות.</p></div>
+      <div class="lg"><h4>אין מה להדפיס</h4><p>הכל קורה בתוך התהליך עצמו: בכל תחנה אתם עונים, בוחרים ומנסחים על המסך — והתשובות שלכם מתגבשות למפת הקאמבק שלכם, שנשארת שמורה ופתוחה בכל פעם שתצטרכו.</p></div>
+    </div>
+    <div class="t"><p class="big" style="margin-top:40px"><b>אתם עושים את זה מהבית, בזמן שלכם.</b></p></div>
+  </div>
+</section>
+
+<!-- ============ 10 NOT FOR ============ -->
+<section class="s-paper">
+  <div class="w t">
+    <span class="kick">בכנות</span>
+    <p class="big">זה <b>לא</b> בשבילכם אם אתם מחפשים ערב שבו יגידו לכם שהכול באשמת הצד השני, או פתרון קסם שמסדר הכול בלחיצת כפתור.</p>
+  </div>
+</section>
+
+<!-- ============ 11 AUTHORITY ============ -->
+<section class="s-cream">
+  <div class="w">
+    <div class="t">
+      <span class="kick">מי מלמדת אתכם</span>
+      <h2>אז נעים מאוד, אני סילבי פרידמן.</h2>
+      <div class="rule"></div>
+      <p>עורכת דין לענייני משפחה בדימוס, שעשתה לפני 8 שנים הסבה מקצועית מתוך תשוקה לחבר בין לבבות ולא להפריד <span style="color:var(--cherry)">(ומסתבר, שאוהבת לדבר על עצמה בגוף שלישי :))</span></p>
+      <p>שמונה שנים שאני מלווה נשים וזוגות. בקליניקה, בהרצאות, בסדנאות ובכל מקום שאני רק יכולה, כי אני מאמינה ויודעת שאפשר לחיות זוגיות מאושרת ולבנות בית חם ובטוח.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>1,000+</b><span>נשים וזוגות</span></div>
+      <div class="stat"><b>8</b><span>שנות ליווי</span></div>
+      <div class="stat"><b>450</b><span>זוגות בריצ׳ארג׳</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12 TESTIMONIALS ============ -->
+<section class="s-wafer">
+  <div class="w">
+    <div class="t">
+      <span class="kick">מזוגות שעברו איתי תהליך</span>
+      <h2>מה שזוגות כתבו לי</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid3">
+      <div class="imgcard"><img src="testimonials/t1.jpg" alt="עדות"></div>
+      <div class="imgcard"><img src="testimonials/t2.jpg" alt="עדות"></div>
+      <div class="imgcard"><img src="testimonials/t3.jpg" alt="עדות"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13 FAQ ============ -->
+<section class="s-cream">
+  <div class="w">
+    <div class="t">
+      <span class="kick">שאלות נפוצות</span>
+      <h2>מה שבדרך כלל שואלים</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>מה אם בן או בת הזוג שלי לא רוצים לעשות את זה איתי?</summary>
+        <p>מתחילים לבד. הכלים עובדים גם כשרק צד אחד מתחיל להשתמש בהם, כי הם משנים את מה שקורה בשיחה ולא תלויים במוטיבציה של הצד השני.</p>
+        <p class="em">ברגע שצד אחד משנה את הדרך שבה הוא נכנס לריב, עוצר אותו וחוזר לשיחה, כל הדינמיקה משתנה.</p>
+      </details>
+      <details><summary>מתי עושים את זה?</summary><p>מתי שנוח לכם. הגישה נפתחת מיד ונשארת פתוחה לתמיד. אפשר לעשות תחנה ולעצור, ולחזור לתהליך בעוד חודש או בעוד שנה — הוא זוכר איפה הייתם.</p></details>
+      <details><summary>אצלנו זה לא כזה נורא.</summary><p>מצוין. התהליך הזה הכי אפקטיבי דווקא לפני שזה נהיה נורא, כשהמרחק עוד קטן והרבה יותר קל להחזיר את הקרבה.</p></details>
+      <details><summary>ניסינו טיפול זוגי וזה לא עבד.</summary><p>זה לא טיפול ולא בא במקום טיפול. אין פה חדר, אין פה מי צודק, ואף אחד לא ינתח אתכם. זו מפת דרכים: במקום לחפור בעבר ולפתוח פצעים ישנים, אתם מקבלים כלים פרקטיים לשנות את הדפוס עצמו ולחזור אחד אל השנייה כבר באותו יום.</p></details>
+      <details><summary>כמה זמן זה לוקח?</summary><p>חמש תחנות, בערך 20 דקות לתחנה. אפשר לעשות את הכול בערב אחד, ואפשר תחנה בכל פעם.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14 BUY ============ -->
+<section class="s-coffee" id="buy">
+  <div class="w">
+    <div class="t">
+      <span class="kick">למה עכשיו</span>
+      <h2>אם היה ביניכם ריב לאחרונה, אל תחכו לריב הבא כדי ללמוד איך לצאת ממנו אחרת.</h2>
+      <div class="rule"></div>
+      <p class="big"><b>מתחילים הערב. משתמשים בזה בפעם הבאה.</b></p>
+      <p>וזה משנה לא רק את הריב הבא. זה משנה את מה שקורה בבית בין הריבים.</p>
+    </div>
+    <div class="buybox">
+      <span class="l">התהליך הזוגי ״הקאמבק״</span>
+      <div class="n">297 ₪</div>
+      <span class="l" style="margin-top:6px">חמש תחנות · מפת קאמבק אישית · גישה לכל החיים</span>
+      <div class="bump">
+        <label>
+          <input type="checkbox" id="bumpbox">
+          <span>הוסיפו את <b>אודיו ה־SOS</b> — הקלטה קצרה שלי לרגע החם עצמו. לוחצים פליי כשהדם רותח, ואני מרגיעה את הרוחות ומחזירה את שניכם לנשום, לפני שנאמר משהו שתצטרכו לתקן. <b>+47 ₪</b></span>
+        </label>
+      </div>
+      <a class="btn" href="https://www.selfish-mom.com/product-page/%D7%94%D7%A7%D7%90%D7%9E%D7%91%D7%A7" id="buybtn">אני רוצה להחזיר את השקט לסלון עוד הערב · 297 ₪</a>
+    </div>
+    <div class="t"><p style="font-size:15.5px;font-weight:900;margin-top:22px">🔒 תשלום מאובטח. הפרטים שלך שמורים.</p></div>
+  </div>
+</section>
+
+<footer>סילבי פרידמן · מאמנת זוגות · @sylvie_selfishlove</footer>
+
+<div id="sticky">
+  <span class="p">התהליך הזוגי ״הקאמבק״<small>חמש תחנות · גישה לכל החיים</small></span>
+  <a href="#buy">להתחיל ב־297 ₪ ←</a>
+</div>
