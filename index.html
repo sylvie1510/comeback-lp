@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="הרצאה של שעה ועשרים, ואחריה תהליך זוגי אינטראקטיבי בחמש תחנות שמתאים את עצמו לדפוסים ולצרכים שלכם.">
+<meta name="description" content="מערכת אינטראקטיבית ב־5 תחנות שמזהה את הקצר המדויק שלכם, ומאסטר-קלאס מלווה של שעה ועשרים.">
 <meta property="og:title" content="הקאמבק · חוזרים לדבר באמת">
-<meta property="og:description" content="הרצאה של שעה ועשרים, ואחריה תהליך זוגי אינטראקטיבי בחמש תחנות שמתאים את עצמו לדפוסים ולצרכים שלכם.">
+<meta property="og:description" content="מערכת אינטראקטיבית ב־5 תחנות שמזהה את הקצר המדויק שלכם, ומאסטר-קלאס מלווה של שעה ועשרים.">
 <meta property="og:type" content="website">
 <title>הקאמבק · חוזרים לדבר באמת</title>
 <style>
@@ -314,6 +314,18 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 .shots.five{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start}
 .shots.five img{flex:1 1 250px;max-width:330px;align-self:flex-start}
 
+.reassure{margin-top:14px;font-size:clamp(14px,1.25vw,16px);line-height:1.6;
+  color:var(--sand);max-width:40ch;margin-inline:auto}
+.mirrorbox{margin:clamp(26px,3.4vw,42px) auto 0;max-width:640px;border:1px solid var(--hair);
+  border-radius:12px;background:var(--paper);padding:clamp(18px,2.6vw,28px);text-align:center}
+.mirrorbox b{display:block;color:var(--crim);font-weight:900;letter-spacing:.1em;
+  font-size:clamp(11.5px,1.15vw,13px);margin-bottom:10px}
+.mirrorbox p{font-size:clamp(15.5px,1.35vw,17.5px);line-height:1.7;color:var(--body);
+  max-width:none;padding-inline:0;margin:0}
+.mcbadge{display:inline-flex;align-items:center;gap:7px;margin-top:14px;border:1px solid var(--hair);
+  border-radius:999px;padding:7px 15px;font-size:clamp(13px,1.2vw,14.5px);font-weight:900;
+  color:var(--body);background:var(--paper)}
+
 /* ---------- order bump ---------- */
 .bump2{margin:20px auto 0;max-width:520px;text-align:right;border:1px dashed var(--crim-soft);
   background:rgba(238,195,190,.14);padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
@@ -342,6 +354,16 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 @media(min-width:900px){
   .stage .bg{object-position:50% 70%}
 }
+.overtitle{display:inline-block;color:#F0DCD7;font-weight:900;letter-spacing:.14em;
+  font-size:clamp(11px,1.2vw,13.5px);border:1px solid rgba(240,220,215,.45);border-radius:999px;
+  padding:7px 18px;margin-bottom:clamp(14px,2.2vw,22px);background:rgba(28,21,18,.3);
+  backdrop-filter:blur(3px);text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  margin:clamp(18px,2.4vw,26px) auto 0}
+.pills span{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--hair);
+  border-radius:999px;padding:8px 16px;font-size:clamp(13.5px,1.25vw,15.5px);
+  font-weight:900;color:var(--body);background:rgba(251,248,245,.7);line-height:1.3}
+.pills b{color:var(--crim);font-weight:900}
 .stage .frame{display:inline-block;border-radius:4px}
 .frame{border:1.5px solid var(--crim);color:var(--crim);font-weight:900;letter-spacing:.02em;
   padding:11px 22px;font-size:clamp(13px,1.5vw,16.5px);margin-bottom:clamp(20px,3vw,34px);
@@ -357,6 +379,8 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 .fold .say{font-size:clamp(18px,2vw,25px);font-weight:900;color:var(--ink);line-height:1.4;
   letter-spacing:-.022em;max-width:32ch;margin-inline:auto;border:1.5px solid var(--crim);border-radius:5px;
   padding:clamp(18px,2.2vw,26px) clamp(20px,2.6vw,32px);background:rgba(251,248,245,.55)}
+.fold .sayb{margin:clamp(18px,2.4vw,28px) auto 0;max-width:46ch;font-size:clamp(16px,1.4vw,18.5px);
+  line-height:1.72;color:var(--body);text-align:center}
 .wins{margin:clamp(28px,3.6vw,46px) auto 0;max-width:760px;text-align:center}
 .wins li{list-style:none;padding:clamp(16px,2vw,22px) 0;border-top:1px solid var(--hair);
   font-size:clamp(16.5px,1.5vw,19.5px);line-height:1.45;color:var(--body)}
@@ -392,8 +416,9 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
   <img class="bg" src="couple-hug.jpg" alt="זוג מחובק">
   <div class="over">
     <div class="wrap">
-      <h1 class="rv" style="--i:1">הקאמבק.</h1>
-      <div class="script rv" style="--i:2"><span>איך מפסיקים את הברוגז וחוזרים להתקרב<br>כבר ביום שאחרי הפיצוץ.</span></div>
+      <div class="overtitle rv" style="--i:1">פרוטוקול אינטראקטיבי לחזרה לקשר וחיבור</div>
+      <h1 class="rv" style="--i:2">הקאמבק.</h1>
+      <div class="script rv" style="--i:3"><span>להמיס את המתח בסלון<br>ולחזור להיות צוות חם.</span></div>
     </div>
   </div>
 </header>
@@ -401,11 +426,16 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
 <section class="fold">
   <div class="wrap">
     <p class="say rv">אתם לא רבים יותר מדי. אתם פשוט לא יודעים איך לחזור.</p>
-    <p class="scene rv">הפיצוץ נגמר, אבל בסלון יש שקט מעיק. כל אחד תופס צד, המבטים קרים, ואף אחד לא רוצה לרדת מהעץ ראשון.</p>
-    <p class="core rv">הרצאה של שעה ועשרים, ואחריה <span class="mark">תהליך אינטראקטיבי בחמש תחנות</span> שמעביר אתכם את הדרך ברגליים, <span class="mark">בהתאמה לדפוסים ולצרכים שלכם</span>: עוצרים את ההסלמה, מרככים את הנוקשות, וחוזרים לשיחה שבאמת פותרת משהו. בלי לטאטא מתחת לשטיח.</p>
+    <p class="sayb rv">בלי חפירות אינסופיות, בלי האשמות, ובלי להיתקע ימים בשתיקה מעיקה. מפת דרכים אינטראקטיבית ב־5 תחנות שמזהה את הקצר המדויק שלכם, ומחזירה את הקלות, הצחוק והחום לבית.</p>
+    <div class="pills rv">
+      <span>⏱️ <b>20 דקות לתחנה</b> · תחנה אחת ביום</span>
+      <span>🧭 <b>אבחון והתאמה אישית</b> לדפוסים שלכם</span>
+    </div>
+    <p class="scene rv">השיחה נגמרה, אבל בסלון יש שקט מעיק. כל אחד תופס צד, המבטים קרים, ואף אחד לא רוצה לרדת מהעץ ראשון.</p>
+    <p class="core rv"><span class="mark">מערכת אינטראקטיבית בחמש תחנות</span> שמעבירה אתכם את הדרך ברגליים, <span class="mark">בהתאמה לדפוסים ולצרכים שלכם</span>: מקצרים את זמן ההתאוששות כשיש קצר, מרככים את הנוקשות, וחוזרים לשיחה שבאמת פותרת משהו. בלי לטאטא מתחת לשטיח. ולצידה, מאסטר-קלאס מלווה שמחזיק לכם את היד.</p>
     <p class="auth rv">אחרי 8 שנים ומעל 1,000 נשים וזוגות שליוויתי ברגעים הכי מתוחים, זיקקתי את מה שבאמת מחזיר את הקִרבה. צעד אחר צעד, בחמש תחנות פשוטות וברורות ליום שאחרי.</p>
     <div class="cta-big rv">
-      <a class="btn gold" href="#buy">בול בשבילנו, רוצים להתחיל! <i>←</i></a>
+      <a class="btn gold" href="#buy">פותחים את התחנה הראשונה יחד <i>←</i></a>
       <p class="cta-note">✓ גישה מיידית לשניכם · <span class="pr">197</span> ₪ בלבד · ללא הגבלת זמן</p>
     </div>
   </div>
@@ -418,7 +448,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="head rv">
       <div class="htxt">
         <span class="tag c">התסריט המוכר</span>
-        <h2>מכירים את הלופ הזה?</h2>
+        <h2>מכירים את מעגל השתיקה הזה?</h2>
       </div>
     </div>
     <div class="rulez"></div>
@@ -429,13 +459,13 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <div class="ar" aria-hidden="true">↓</div>
       <div class="step">הטונים עולים</div>
       <div class="ar" aria-hidden="true">↓</div>
-      <div class="step">אחד מרגיש שהוא שוב נכשל, השני מרגיש לבד ונטוש</div>
+      <div class="step">אחד מרגיש שהוא שוב לא מצליח להגיע אליה, השני מרגיש לבד</div>
       <div class="ar" aria-hidden="true">↓</div>
       <div class="step">הולכים לישון בגב מופנה</div>
       <div class="ar" aria-hidden="true">↓</div>
       <div class="step">יום־יומיים מדברים רק על הילדים</div>
       <div class="ar" aria-hidden="true">↓</div>
-      <div class="step end">המתח נרגע מעצמו, אבל שום דבר לא באמת נסגר. וככה עוד שכבה של ריחוק מצטברת ביניכם. עד הפיצוץ הבא.</div>
+      <div class="step end">המתח נרגע מעצמו, אבל שום דבר לא באמת נסגר. וככה עוד שכבה של ריחוק מצטברת ביניכם. עד הקצר הבא.</div>
     </div>
   </div>
 </section>
@@ -467,24 +497,29 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="head rv">
       <div class="htxt">
         <span class="tag c">מה זה כולל</span>
-        <h2>שני חלקים</h2>
+        <h2>מערכת אחת,<br>ומאסטר-קלאס שמלווה אותה</h2>
       </div>
     </div>
     <div class="rulez"></div>
-    <p class="lead rv">קודם מבינים למה זה קורה לכם. ואז עוברים את הדרך ברגליים.</p>
+    <p class="lead rv">לא עוד הרצאה שיושבים להקשיב לה — אלא מערכת אינטראקטיבית חכמה שממפה את הדינמיקה הייחודית של שניכם, ומציגה לכל אחד מכם את הצעד המדויק שלו.</p>
     <div class="twoparts rv">
       <div>
         <span class="pnum">01</span>
-        <h3>ההרצאה</h3>
-        <p class="plen">שעה ועשרים</p>
-        <p>למה זה קורה לכם דווקא ככה, מה באמת מתרחש מתחת לריב, ולמה הדברים שניסיתם עד היום לא עבדו. זה החלק שבו הכול מתחיל להסתדר.</p>
+        <h3>המערכת האינטראקטיבית</h3>
+        <p class="plen">חמש תחנות</p>
+        <p>הלב של הקאמבק. שניכם על מסך אחד, עונים, בוחרים ומסכימים — והתחנות מתאימות את עצמן לתשובות שלכם. יוצאים עם מילת קוד, עם צעד מדויק לכל אחד ועם מפה שאפשר לתלות.</p>
       </div>
       <div>
         <span class="pnum">02</span>
-        <h3>התהליך</h3>
-        <p class="plen">חמש תחנות</p>
-        <p>ומכאן אתם עושים. שניכם על מסך אחד, עונים, בוחרים ומסכימים — והתחנות מתאימות את עצמן לתשובות שלכם. יוצאים עם מילת קוד, עם צעדים לכל אחד ועם מפה שאפשר לתלות.</p>
+        <h3>המאסטר-קלאס המלווה</h3>
+        <p class="plen">שעה ועשרים · מחולק לפרקים</p>
+        <p>הדרכת עומק קולחת וממוקדת שמעניקה לכם את ההסבר הפסיכולוגי והמעשי מאחורי התחנות, כדי שתבינו בדיוק מה קורה ביניכם ברגעים הטעונים ואיך לפתוח את הלב בלי להרגיש מותקפים.</p>
+        <span class="mcbadge">🎧 לצפייה או להאזנה, משותפת או אישית, בכל זמן</span>
       </div>
+    </div>
+    <div class="mirrorbox rv">
+      <b>בלי צדדים</b>
+      <p>התהליך נייטרלי לגמרי ולא שיפוטי. הוא לא מכריע מי צודק ולא בוחר צד — הוא פשוט מחזיר לשניכם מראה מדויקת של מה שקורה ביניכם, כדי שתוכלו להסתכל עליה יחד.</p>
     </div>
   </div>
 </section>
@@ -499,7 +534,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       </div>
     </div>
     <div class="rulez"></div>
-    <p class="lead rv">בכל תחנה אתם לא רק מקשיבים. אתם עונים, בוחרים ומסכימים — והתחנה מתאימה את עצמה למה שסימנתם.</p>
+    <p class="lead rv">בכל תחנה אתם לא רק מקשיבים. אתם עונים, בוחרים ומסכימים — והמערכת מזהה את הדפוס שלכם ומציגה לכל אחד מכם את הצעד המדויק שלו.</p>
     <div class="stations">
       <div class="st rv">
         <span class="n">1</span>
@@ -539,7 +574,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     </div>
     <p class="hand rv" style="margin-top:clamp(30px,3.6vw,46px)">מהרגע שאיבדתם אחד את השנייה ועד שמצאתם את הדרך בחזרה</p>
     <div class="rv" style="margin-top:clamp(26px,3vw,40px)">
-      <a class="btn ghost" href="#buy">יאללה, עושים קאמבק</a>
+      <a class="btn ghost" href="#buy">אנחנו רוצים להחזיר את החום הביתה</a>
     </div>
   </div>
 </section>
@@ -583,7 +618,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="head rv">
       <div class="htxt">
         <span class="tag">הצצה פנימה</span>
-        <h2>קודם מבינים.<br>ואז עושים.</h2>
+        <h2>ככה זה נראה<br>מבפנים.</h2>
       </div>
     </div>
 
@@ -593,8 +628,8 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <div class="phone p-b"><img src="preview/p1.jpg" alt="תחנה 01 · מה כל אחד שומע כשמבקשים הפסקה"></div>
     </div>
     <div class="peeknotes rv">
-      <div>שניכם עונים על אותו מסך, ורואים בזמן אמת מה השני סימן.</div>
-      <div>הודעה קולית ממני, תוכן מגובה מחקר ומבוסס ניסיון מהקליניקה, ותרגול שאלות בלייב.</div>
+      <div>שניכם עונים על אותו מסך, ורואים בזמן אמת מה השני סימן. בלי מי צודק, בלי צדדים.</div>
+      <div>הודעה קולית ממני, תוכן מגובה מחקר ומבוסס ניסיון מהקליניקה, והמאסטר-קלאס שמלווה כל תחנה.</div>
       <div>ובסוף נבנית לכם מפה, שמשקפת לכם מה קורה מתחת לפני השטח ומה לעשות אחרת.</div>
     </div>
 
@@ -692,7 +727,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <img src="testimonials/t5.jpg" alt="עדות של מאמנת אחרי תחנה 01">
     </div>
     <div class="rv" style="margin-top:clamp(30px,3.8vw,48px)">
-      <a class="btn gold" href="#buy">לגמרי אנחנו, רוצים להתחיל <i>←</i></a>
+      <a class="btn gold" href="#buy">פותחים את התחנה הראשונה יחד <i>←</i></a>
     </div>
   </div>
 </section>
@@ -708,7 +743,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="rulez"></div>
     <ul class="rows two rv">
       <li><span class="m">01</span><span class="x">שיקוף זוגי שנבנה בזמן אמת מהתשובות שלכם, ומראה מה קורה מתחת לפני השטח.</span></li>
-      <li><span class="m">02</span><span class="x">היכולת לפרוק את המתח ולעצור הסלמה עוד לפני שהיא הופכת לפיצוץ.</span></li>
+      <li><span class="m">02</span><span class="x">היכולת לפרוק את המתח ולעצור הסלמה בזמן, לפני שהיא מסלימה.</span></li>
       <li><span class="m">03</span><span class="x">דרך מוסכמת לרדת מהעץ בלי שאף אחד ירגיש שהוא ״נכנע״ או מוותר על עצמו.</span></li>
       <li><span class="m">04</span><span class="x">תסריטי שיחה מדויקים לרגעי הקצה, בדיוק כשאין מילים ואין כוח.</span></li>
       <li><span class="m">05</span><span class="x">עיניים טובות יותר אחד על השנייה, ופריזמה אחרת להסתכל דרכה.</span></li>
@@ -727,8 +762,8 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     </div>
     <div class="rulez"></div>
     <ul class="rows two rv">
-      <li><span class="m">01</span><span class="x">הרצאה מוקלטת של שעה ועשרים, לצפייה מתי שנוח לכם.</span></li>
-      <li><span class="m">02</span><span class="x">גישה מלאה וללא הגבלת זמן לתהליך הזוגי האינטראקטיבי בחמש תחנות, שמתאים את עצמו לתשובות שלכם.</span></li>
+      <li><span class="m">01</span><span class="x">מאסטר-קלאס מלווה של שעה ועשרים, מחולק לפרקים לפי התחנות, לצפייה או להאזנה מתי שנוח לכם.</span></li>
+      <li><span class="m">02</span><span class="x">גישה מלאה וללא הגבלת זמן למערכת האינטראקטיבית בחמש תחנות, שמתאימה את עצמה לתשובות שלכם.</span></li>
       <li><span class="m">03</span><span class="x">חמש תחנות עבודה מעשיות, קצרות וממוקדות.</span></li>
       <li><span class="m">04</span><span class="x">שאלות אישיות ומעמיקות לכל אחד מבני הזוג.</span></li>
       <li><span class="m">05</span><span class="x">תבניות ונוסחי שיחה לחזרה ולתיקון בזמן אמת.</span></li>
@@ -742,6 +777,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <span class="l" id="pricelbl">מחיר השקה · רכישה אחת לשני בני הזוג</span>
       <div class="n"><span class="pr">197</span> ₪</div>
       <span class="l">חמש תחנות · מפת קאמבק מלאה · ללא הגבלת זמן</span>
+      <p class="reassure">תהליך קצר, ישים וממוקד. תחנה אחת ביום, כ־20 דקות, ואתם כבר עובדים על משהו קונקרטי מהערב הראשון.</p>
       <span class="deadline" id="dlnote">מחיר ההשקה נסגר עם סיום הספירה למעלה</span>
       <a class="btn" href="https://www.selfish-mom.com/product-page/%D7%94%D7%A7%D7%90%D7%9E%D7%91%D7%A7">מתחילים את הקאמבק יחד · <span class="pr">197</span> ₪</a>
       <span class="l" style="letter-spacing:.06em">✓ רכישה מאובטחת ✓ גישה מיידית לשניכם</span>
@@ -803,7 +839,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
     <div class="rulez"></div>
     <p class="lead rv">הוא יגיע. אצל כולם הוא מגיע.</p>
     <p class="rv" style="margin-top:20px">השאלה היחידה היא אם תמצאו את עצמכם שוב באותו לופ של שתיקה, מרחק וימים שנשרפים, <b>או שתדעו בדיוק מה לעשות, כל אחד מכם, כבר ביום שאחרי.</b></p>
-    <div class="rv"><a class="btn gold" href="#buy">רוצים את מפת הדרך שלנו <i>←</i></a></div>
+    <div class="rv"><a class="btn gold" href="#buy">אנחנו רוצים להחזיר את החום הביתה <i>←</i></a></div>
   </div>
 </section>
 
@@ -817,7 +853,7 @@ footer a:hover{color:#FDF8F3;border-color:#FDF8F3}
       <p>או שאפשר לעצור, לפנות עשרים דקות, ולבנות יחד דרך פעולה ברורה שתחזיר את הביטחון והקרבה לקשר.</p>
     </div>
     <div class="rv">
-      <a class="btn" href="#buy">אנחנו בפנים!</a>
+      <a class="btn" href="#buy">פותחים את התחנה הראשונה יחד ←</a>
       <p class="specs" style="margin-top:20px">חמש התחנות לעצירת ההסלמה, שיחת תיקון ובניית שותפות יציבה · <span class="pr">197</span> ₪ לזוג</p>
     </div>
   </div>
